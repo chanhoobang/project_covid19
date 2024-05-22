@@ -1,0 +1,110 @@
+{% extends 'base.html' %}
+
+{% block content %} 
+
+<!-- 페이지 단의 달력에서 date 값을 API 서버로 넘겨준다. -->
+<form id="info" action="/covid19/get_covid19_data" method="post">
+    <input type="date" name="date" id="date">
+    <select name="type" id="type">
+        <option value="country">country</option>
+        <option value="gender">gender</option>
+        <option value="age">age</option>
+    </select>
+    <button id="ajax_btn" type="button">결과 출력</button>
+</form>
+
+<h1 id="no_data"></h1>
+<canvas id="myChart_age"></canvas>
+<hr>
+<canvas id="myChart_gender"></canvas>
+
+{% endblock %}
+
+{% block script %}
+<script>
+    $(document).ready(function(){
+
+        $("#ajax_btn").click(function(){
+            let form = document.getElementById("info");
+            let formData = new FormData(form);
+
+            $.ajax({
+            url: "/covid19/get_covid19_data",
+            type: "POST",
+            processData: false,
+            contentType: false,
+            data: formData,
+            dataType: "JSON",
+            success: function(data){
+                TF = data["TF"]
+                let col_name = data["col_name"]
+                let row_data = data["row_data"]
+
+                if (TF){
+                    $("#no_data").text("")
+
+                    TF = false;
+
+                    let labels = [];
+                    let data = [];
+
+                    let chartStatus = Chart.getChart('myChart');
+                    if (chartStatus !== undefined) {
+                        chartStatus.destroy();
+                    }
+
+                    for (var i = 0; i < row_data.length; i++) {
+                        labels.push(row_data[i][0] + "_" + col_name[i][-2])
+                    }
+
+                    for (i = 0; i < row_data.length; i++) {
+                        data.push(row_data[i][-2])
+                    }
+
+                    let ctx = document.getElementById('myChart');
+                    let myChart_age = new Chart(ctx, {
+                        type: 'bar',
+                        data: {
+                            labels: labels,
+                            datasets: [{
+                                label: 'Number_of_people',
+                                data: data,
+                            }]
+                        },
+                        options: {
+                            responsive: true,
+                            plugins: {
+                            legend: {
+                                position: 'top',
+                            },
+                            title: {
+                                display: true,
+                                text: 'data'
+                            },
+                            }
+                        }
+                    });
+
+                } else {
+                    let labels = [];
+                    let data = [];
+
+                    let chartStatus = Chart.getChart('myChart');
+                    if (chartStatus !== undefined) {
+                        chartStatus.destroy();
+                    }
+
+                    $("#no_data").text("no_data")
+                }
+
+                
+            }
+            });
+        });
+
+
+
+
+     });
+</script> 
+{% endblock %}
