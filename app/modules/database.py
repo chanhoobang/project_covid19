@@ -7,6 +7,7 @@ def select(table_name):
         
         cursor = conn.cursor()
         sql = f"select * from {table_name}"
+        cursor.execute(sql)
 
         data = cursor.fetchall()
         return data
