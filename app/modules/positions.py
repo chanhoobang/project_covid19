@@ -39,7 +39,13 @@ class Positions:
                 'position_x': data_frame.values[idx][3],
                 'position_y': data_frame.values[idx][4]
             }
-            insert.append(data)
+
+            # 2,3 레벨의 주소가 null 값인 데이터는 제외하는 코드 추가
+            # @@@@@@@@@@@@@@@@@ 추가 코드
+            if data['address_lev2'] is None | data['address_lev3'] is None:
+                pass
+            else:
+                insert.append(data)
 
         return insert
 

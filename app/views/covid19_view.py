@@ -3,10 +3,23 @@ from flask import Blueprint, render_template, request
 bp = Blueprint("covid19", __name__, url_prefix="/covid19")
 
 
-# covid19.html 파일을 화면에 띄우는 라우터
+# 메인 화면 html 파일로 연결하는 라우터
 @bp.route("/")
-def covid19():
-    return render_template("covid19/covid19.html")
+def covid19_main():
+    return render_template("covid19/covid19_main.html")
+
+
+
+# 차트를 그리는 html 파일로 연결하는 라우터
+@bp.route("/covid19_chart")
+def covid19_chart():
+    return render_template("covid19/covid19_chart.html")
+
+
+# 맵을 출력하는 html 파일로 연결하는 라우터
+@bp.route("covid19_map")
+def covid19_map():
+    return render_template("covid19/covid19_map.html")
 
 
 # 나잇대별, 성별 확진자 데이터를 받아 JSON 형태로 반환하는 라우터
@@ -42,3 +55,11 @@ def get_covid19_data():
         TF = False
 
     return {"TF":TF, "col_name": col_name, "row_data": row_data}
+
+
+@bp.route("/covid19_draw_map", methods=("POST, "))
+def covid19_draw_map():
+    current_date = request.form.get("date")
+    data_type = request.form.get("type")
+
+    
