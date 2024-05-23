@@ -1,4 +1,5 @@
 import Blueprint, render_template, request
+import draw_map
 
 bp = Blueprint("covid19", __name__, url_prefix="/covid19")
 
@@ -57,8 +58,11 @@ def get_covid19_data():
     return {"TF":TF, "col_name": col_name, "row_data": row_data}
 
 
+# 맵을 그리는 라우터
 @bp.route("/covid19_draw_map", methods=("POST, "))
 def covid19_draw_map():
     current_date = request.form.get("date")
     data_type = request.form.get("type")
+
+    draw_map(current_date, data_type)
 
