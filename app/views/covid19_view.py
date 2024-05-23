@@ -1,12 +1,21 @@
-import Blueprint, render_template, request
-import draw_map
+from flask import Blueprint, render_template, request
+from app.modules import draw_map, database
 
 bp = Blueprint("covid19", __name__, url_prefix="/covid19")
 
 
+# 테스트용 라우터
+@bp.route("/test")
+def test():
+    data = database.select("dev_positions_korea", "경기도")
+    print(data)
+    return render_template("/covid19/test.html", data=data)
+
+
+
 # 메인 화면 html 파일로 연결하는 라우터
 @bp.route("/")
-def covid19_main():
+def covid19_main(): 
     return render_template("covid19/covid19_main.html")
 
 
@@ -33,33 +42,34 @@ def covid19_map():
 # 예) 항목1 = [male, total_cases, active_cases, death_cases, re_cases, re_rate]
 # get_data 함수: 데이터베이스에서 데이터를 가져오는 기능
 
-@bp.route("/get_covid19_data", methods=("POST", ))
-def get_covid19_data():
+# @bp.route("/get_covid19_data", methods=["POST", ])
+# def get_covid19_data():
 
-    TF = True
+#     TF = True
 
-    current_date = request.form.get("date")
-    data_type = request.form.get("type")
+#     current_date = request.form.get("date")
+#     data_type = request.form.get("type")
 
-    default_col_name = ["total_cases", "active_cases", "death_cases", "re_cases", "re_rate", "date"]
-    col_name = []
+#     default_col_name = ["total_cases", "active_cases", "death_cases", "re_cases", "re_rate", "date"]
+#     col_name = []
 
-    # 데이터베이스에서 받아온 데이터를 row_data에 입력한다.
-    # 미완성 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
-    row_data = get_data(current_date)
+#     # 데이터베이스에서 받아온 데이터를 row_data에 입력한다.
+#     # 미완성 @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#     row_data = get_data(current_date)
 
-    if data_type == "gender":
-        col_name = ["gender"] + default_col_name
-    elif data_type == "age":
-        col_name = ["age"] + default_col_name
-    else:
-        TF = False
+#     if data_type == "gender":
+#         col_name = ["gender"] + default_col_name
+#     elif data_type == "age":
+#         col_name = ["age"] + default_col_name
+#     else:
+#         TF = False
 
-    return {"TF":TF, "col_name": col_name, "row_data": row_data}
+#     return {"TF":TF, "col_name": col_name, "row_data": row_data}
+
 
 
 # 맵을 그리는 라우터
-@bp.route("/covid19_draw_map", methods=("POST, "))
+@bp.route("/covid19_draw_map", methods=["POST, "])
 def covid19_draw_map():
     current_date = request.form.get("date")
     data_type = request.form.get("type")

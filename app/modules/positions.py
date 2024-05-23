@@ -31,21 +31,17 @@ class Positions:
 
         insert = []
 
-        for idx in range(len(data_frame)):
-            data = {
-                'address_lev1': data_frame.values[idx][0],
-                'address_lev2': self.convert_nan_to_none(data_frame.values[idx][1]),
-                'address_lev3': self.convert_nan_to_none(data_frame.values[idx][2]),
-                'position_x': data_frame.values[idx][3],
-                'position_y': data_frame.values[idx][4]
-            }
+        print(data_frame.values[0][1])
 
-            # 2,3 레벨의 주소가 null 값인 데이터는 제외하는 코드 추가
-            # @@@@@@@@@@@@@@@@@ 추가 코드
-            if data['address_lev2'] is None | data['address_lev3'] is None:
-                pass
-            else:
+        for idx in range(len(data_frame)):
+            if self.convert_nan_to_none(data_frame.values[idx][1]) is None:
+                data = {
+                    'address_lev1': data_frame.values[idx][0],
+                    'position_x': data_frame.values[idx][3],
+                    'position_y': data_frame.values[idx][4]
+                }
                 insert.append(data)
+                
 
         return insert
 

@@ -26,7 +26,7 @@ SESSION = scoped_session(sessionmaker(bind=ENGINE, autocommit=False, autoflush=F
 
 CONNECTION = pymysql.connect(
     host = os.getenv('DATABASE_HOST'),
-    port = os.getenv('DATABASE_PORT'),
+    port = int(os.getenv('DATABASE_PORT')),
     user = os.getenv('DATABASE_USERNAME'),
     password = os.getenv('DATABASE_PASSWORD'),
     db = os.getenv('DATABASE_NAME'),
