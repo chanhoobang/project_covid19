@@ -1,4 +1,4 @@
-from flask import Blueprint, render_template, request
+import Blueprint, render_template, request
 
 bp = Blueprint("covid19", __name__, url_prefix="/covid19")
 
@@ -62,4 +62,3 @@ def covid19_draw_map():
     current_date = request.form.get("date")
     data_type = request.form.get("type")
 
-    
