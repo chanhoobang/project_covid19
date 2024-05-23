@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, Blueprint
 from sqlalchemy import inspect
 
 from app.database import ENGINE, SESSION, BASE
@@ -35,5 +35,8 @@ def create_app():
             # 국내 좌표값 데이터 입력 처리
             korea_position_data = positions.get_dataset_positions('korea')
             positions.insert_table_korea_position(korea_position_data)
+
+        from .views import covid19_view
+        app.register_blueprint(covid19_view.bp)
 
     return app
