@@ -144,3 +144,50 @@ class Common:
         offset = (page - 1) * per_page
         users = SESSION.query(model).filter(getattr(model, 'data_date') == date).limit(per_page).offset(offset).all()
         return users
+
+    
+    # 딕셔너리를 포함하는 리스트를 입력받아 정수 세자리 마라 콤마를 찍어 str 형태로 변환하는 함수
+    @staticmethod
+    def add_comma_to_list(list_name): 
+        for idx in range(len(list_name)):
+            list_name[idx]['total_cases'] = Common.add_comma(int(list_name[idx]['total_cases']))
+            list_name[idx]['active_cases'] = Common.add_comma(int(list_name[idx]['active_cases']))
+            list_name[idx]['death_cases'] = Common.add_comma(int(list_name[idx]['death_cases']))
+            list_name[idx]['re_cases'] = Common.add_comma(int(list_name[idx]['re_cases']))
+        return list_name
+    
+    @staticmethod
+    def add_comma(num):
+        if num < 1000:
+            comma_num = str(num)[0]+","+str(num)[-3:]
+        elif (num > 1000) & (num < 1000000):
+            comma_num = str(num)[-6:-3]+","+str(num)[-3:]
+        elif (num > 1000000) & (num < 1000000000):
+            comma_num = str(num)[-9:-6]+","+str(num)[-6:-3]+","+str(num)[-3:]
+        return comma_num
+
+
+
+    # 영어로 된 한국의 도시명을 한국어로 변환해주는 함수
+    def mapping_city_name(city_name):
+        dict_city_name = {
+            "Busan":"부산광역시",
+            "Chungcheongbuk":"충청북도",
+            "Chungcheongnam":"충청남도",
+            "Daegu":"대구광역시",
+            "Daejeon":"대전광역시",
+            "Gangwon":"강원특별자치도",
+            "Gwangju":"광주광역시",
+            "Gyeonggi":"경기도",
+            "Gyeongsangbuk":"경상북도",
+            "Gyeongsangnam":"경상남도",
+            "Incheon":"인천광역시",
+            "Jeju":"제주특별자치도",
+            "Jeollabuk":"전라북도",
+            "Jeollanam":"전라남도",
+            "Sejong":"세종특별자치시",
+            "Seoul":"서울특별시",
+            "Ulsan":"울산광역시",
+        }
+
+        return dict_city_name[city_name]

@@ -51,15 +51,17 @@ def draw_map(data_type, date):
     for data in data_all:
         if data_type == "korea":
             position = Common.select_where_position(KoreaPosition, data.city_name)
+            name = Common.mapping_city_name(data.city_name)
             for p in position:
                 temp_location = [p.position_y, p.position_x]
         elif data_type == "global":
             position = Common.select_where_nation(GlobalPosition, data.nation)
+            name = data.nation
             for p in position:
                 temp_location = [p.position_x, p.position_y]
 
         content = f"""
-        <h3>지명: {data.city_name if data_type == "korea" else data.nation}</h3>
+        <h3>지명: {name if data_type == "korea" else data.nation}</h3>
         <p>사망자 수: {data.death_cases}</p>
         <p>누적 확진자 수: {data.total_cases}</p>
         <p>신규 확진자 수: {data.active_cases}</p>
@@ -79,3 +81,5 @@ def draw_map(data_type, date):
           ).add_to(map1)
 
     map1.save(file_path)
+
+
