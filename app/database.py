@@ -22,7 +22,8 @@ engine_connection_string = '{}+{}://{}:{}@{}:{}/{}'.format(
 
 ENGINE = create_engine(engine_connection_string)
 BASE = declarative_base()
-SESSION = scoped_session(sessionmaker(bind=ENGINE, autocommit=False, autoflush=False))
+SESSION_MAKER = sessionmaker(bind=ENGINE, autocommit=False, autoflush=False)
+SESSION = SESSION_MAKER()
 
 CONNECTION = pymysql.connect(
     host = os.getenv('DATABASE_HOST'),
