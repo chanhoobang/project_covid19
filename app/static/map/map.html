@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_cb138ccb08de343fb5e4ec62c0a9c301 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_cb138ccb08de343fb5e4ec62c0a9c301" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_cb138ccb08de343fb5e4ec62c0a9c301 = L.map(
+                "map_cb138ccb08de343fb5e4ec62c0a9c301",
+                {
+                    center: [37.0, 127.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                    locatzoomStart: 10,
+                }
+            );
+            L.control.scale().addTo(map_cb138ccb08de343fb5e4ec62c0a9c301);
+
+            
+
+        
+    
+            var tile_layer_1f4ed512e92a95fefe9afb17b4e6c4e9 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_1f4ed512e92a95fefe9afb17b4e6c4e9.addTo(map_cb138ccb08de343fb5e4ec62c0a9c301);
+        
+    
+            var marker_cluster_7f554c213e45a2ca0275221b08ac0f16 = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var circle_f15fe6835f954083bacad44e1c14fb9d = L.circle(
+                [35.18, 129.08],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17907.83, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_7f554c213e45a2ca0275221b08ac0f16);
+        
+    
+        var popup_d05cb1316ffe3627e548dec869a35d74 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_6b96f87c68e018e9e3068b469a673cd6 = $(`<div id="html_6b96f87c68e018e9e3068b469a673cd6" style="width: 100.0%; height: 100.0%;">         <h3>지명: Busan</h3>         <p>사망자 수: 2772</p>         <p>누적 확진자 수: 1790783</p>         <p>신규 확진자 수: 1635.0</p>         <p>재감염률: 0.09</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_d05cb1316ffe3627e548dec869a35d74.setContent(html_6b96f87c68e018e9e3068b469a673cd6);
+            
+        
+
+        circle_f15fe6835f954083bacad44e1c14fb9d.bindPopup(popup_d05cb1316ffe3627e548dec869a35d74)
+        ;
+
+        
+    
+    
+            var circle_76bf10199a4a24e6e747062311d628ff = L.circle(
+                [35.18, 129.08],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9441.95, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_7f554c213e45a2ca0275221b08ac0f16);
+        
+    
+        var popup_918c2a6de1b25ccf41214aeeec6cf307 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_983ef287a17181f18f6592d1a4439acb = $(`<div id="html_983ef287a17181f18f6592d1a4439acb" style="width: 100.0%; height: 100.0%;">         <h3>지명: Chungcheongbuk</h3>         <p>사망자 수: 1003</p>         <p>누적 확진자 수: 944195</p>         <p>신규 확진자 수: 710.0</p>         <p>재감염률: 0.08</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_918c2a6de1b25ccf41214aeeec6cf307.setContent(html_983ef287a17181f18f6592d1a4439acb);
+            
+        
+
+        circle_76bf10199a4a24e6e747062311d628ff.bindPopup(popup_918c2a6de1b25ccf41214aeeec6cf307)
+        ;
+
+        
+    
+    
+            var circle_fb9e62652af3c68be5aaa6701dc19180 = L.circle(
+                [35.18, 129.08],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12195.54, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_7f554c213e45a2ca0275221b08ac0f16);
+        
+    
+        var popup_250bc1d7b31129c027bf9da0bc0fc26b = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_9ef417e8b68d82ea7656d0d5972ecdea = $(`<div id="html_9ef417e8b68d82ea7656d0d5972ecdea" style="width: 100.0%; height: 100.0%;">         <h3>지명: Chungcheongnam</h3>         <p>사망자 수: 1523</p>         <p>누적 확진자 수: 1219554</p>         <p>신규 확진자 수: 984.0</p>         <p>재감염률: 0.08</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_250bc1d7b31129c027bf9da0bc0fc26b.setContent(html_9ef417e8b68d82ea7656d0d5972ecdea);
+            
+        
+
+        circle_fb9e62652af3c68be5aaa6701dc19180.bindPopup(popup_250bc1d7b31129c027bf9da0bc0fc26b)
+        ;
+
+        
+    
+    
+            var circle_a83d7ca4ed9f7c7da3b90c1472648729 = L.circle(
+                [35.87, 128.6],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13141.38, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_7f554c213e45a2ca0275221b08ac0f16);
+        
+    
+        var popup_02a6df9f55d8a7bcb59b967ab933aa65 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_b8acac01de49007b153b69610a920ce2 = $(`<div id="html_b8acac01de49007b153b69610a920ce2" style="width: 100.0%; height: 100.0%;">         <h3>지명: Daegu</h3>         <p>사망자 수: 1937</p>         <p>누적 확진자 수: 1314138</p>         <p>신규 확진자 수: 1180.0</p>         <p>재감염률: 0.09</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_02a6df9f55d8a7bcb59b967ab933aa65.setContent(html_b8acac01de49007b153b69610a920ce2);
+            
+        
+
+        circle_a83d7ca4ed9f7c7da3b90c1472648729.bindPopup(popup_02a6df9f55d8a7bcb59b967ab933aa65)
+        ;
+
+        
+    
+    
+            var circle_78a870dfe8cf07f903ed0df80b90cb28 = L.circle(
+                [36.35, 127.39],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8793.98, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_7f554c213e45a2ca0275221b08ac0f16);
+        
+    
+        var popup_a016b6713bb43266a09d5478572c2ae3 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_39f5bf4535ea4bbba9d05c0e9071a24e = $(`<div id="html_39f5bf4535ea4bbba9d05c0e9071a24e" style="width: 100.0%; height: 100.0%;">         <h3>지명: Daejeon</h3>         <p>사망자 수: 916</p>         <p>누적 확진자 수: 879398</p>         <p>신규 확진자 수: 612.0</p>         <p>재감염률: 0.07</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_a016b6713bb43266a09d5478572c2ae3.setContent(html_39f5bf4535ea4bbba9d05c0e9071a24e);
+            
+        
+
+        circle_78a870dfe8cf07f903ed0df80b90cb28.bindPopup(popup_a016b6713bb43266a09d5478572c2ae3)
+        ;
+
+        
+    
+    
+            var circle_6024de4ec32c90f0cefb93179ba806df = L.circle(
+                [37.88, 127.73],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8876.73, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_7f554c213e45a2ca0275221b08ac0f16);
+        
+    
+        var popup_31147863775651bbbb9bd8b35e5f06a2 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_afb1887797dd678a8a79ed94ec28ddf7 = $(`<div id="html_afb1887797dd678a8a79ed94ec28ddf7" style="width: 100.0%; height: 100.0%;">         <h3>지명: Gangwon</h3>         <p>사망자 수: 1277</p>         <p>누적 확진자 수: 887673</p>         <p>신규 확진자 수: 633.0</p>         <p>재감염률: 0.07</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_31147863775651bbbb9bd8b35e5f06a2.setContent(html_afb1887797dd678a8a79ed94ec28ddf7);
+            
+        
+
+        circle_6024de4ec32c90f0cefb93179ba806df.bindPopup(popup_31147863775651bbbb9bd8b35e5f06a2)
+        ;
+
+        
+    
+    
+            var circle_7c515325e20e0e7b0a5b51c5a750c899 = L.circle(
+                [35.16, 126.85],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8771.11, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_7f554c213e45a2ca0275221b08ac0f16);
+        
+    
+        var popup_1426307608f23ce49d028ae4ebcd432f = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_7acb7758593104dba70757461e8a1885 = $(`<div id="html_7acb7758593104dba70757461e8a1885" style="width: 100.0%; height: 100.0%;">         <h3>지명: Gwangju</h3>         <p>사망자 수: 804</p>         <p>누적 확진자 수: 877111</p>         <p>신규 확진자 수: 759.0</p>         <p>재감염률: 0.09</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_1426307608f23ce49d028ae4ebcd432f.setContent(html_7acb7758593104dba70757461e8a1885);
+            
+        
+
+        circle_7c515325e20e0e7b0a5b51c5a750c899.bindPopup(popup_1426307608f23ce49d028ae4ebcd432f)
+        ;
+
+        
+    
+    
+            var circle_195814113c24875f2df2cd556da37e6b = L.circle(
+                [37.27, 127.01],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 81537.25, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_7f554c213e45a2ca0275221b08ac0f16);
+        
+    
+        var popup_c29edb30eec2e562d7baaa6fdea09296 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_722db000cfc926291486f4a2ee7bda08 = $(`<div id="html_722db000cfc926291486f4a2ee7bda08" style="width: 100.0%; height: 100.0%;">         <h3>지명: Gyeonggi</h3>         <p>사망자 수: 8209</p>         <p>누적 확진자 수: 8153725</p>         <p>신규 확진자 수: 5674.0</p>         <p>재감염률: 0.07</p>         <p>재감염자 수: 4.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_c29edb30eec2e562d7baaa6fdea09296.setContent(html_722db000cfc926291486f4a2ee7bda08);
+            
+        
+
+        circle_195814113c24875f2df2cd556da37e6b.bindPopup(popup_c29edb30eec2e562d7baaa6fdea09296)
+        ;
+
+        
+    
+    
+            var circle_801326db37d5c64d012ba0d2ff39722b = L.circle(
+                [36.58, 128.51],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13764.26, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_7f554c213e45a2ca0275221b08ac0f16);
+        
+    
+        var popup_ae6f2991bc817bf3528c8767f45bd0c1 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_7350115989513df0e052a88aee0089be = $(`<div id="html_7350115989513df0e052a88aee0089be" style="width: 100.0%; height: 100.0%;">         <h3>지명: Gyeongsangbuk</h3>         <p>사망자 수: 2027</p>         <p>누적 확진자 수: 1376426</p>         <p>신규 확진자 수: 1345.0</p>         <p>재감염률: 0.1</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_ae6f2991bc817bf3528c8767f45bd0c1.setContent(html_7350115989513df0e052a88aee0089be);
+            
+        
+
+        circle_801326db37d5c64d012ba0d2ff39722b.bindPopup(popup_ae6f2991bc817bf3528c8767f45bd0c1)
+        ;
+
+        
+    
+    
+            var circle_2cdd978e8126fa35ca282ead906476bc = L.circle(
+                [35.23, 128.69],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18048.12, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_7f554c213e45a2ca0275221b08ac0f16);
+        
+    
+        var popup_655e92e8172e18997d0d7181df2a08b6 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_a88cd4177bb6879cd0d67a46c848f4bb = $(`<div id="html_a88cd4177bb6879cd0d67a46c848f4bb" style="width: 100.0%; height: 100.0%;">         <h3>지명: Gyeongsangnam</h3>         <p>사망자 수: 1850</p>         <p>누적 확진자 수: 1804812</p>         <p>신규 확진자 수: 1631.0</p>         <p>재감염률: 0.09</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_655e92e8172e18997d0d7181df2a08b6.setContent(html_a88cd4177bb6879cd0d67a46c848f4bb);
+            
+        
+
+        circle_2cdd978e8126fa35ca282ead906476bc.bindPopup(popup_655e92e8172e18997d0d7181df2a08b6)
+        ;
+
+        
+    
+    
+            var circle_5a60ec34404dff6d39e3248f328229b7 = L.circle(
+                [37.45, 126.71],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 17524.98, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_7f554c213e45a2ca0275221b08ac0f16);
+        
+    
+        var popup_c36c2a42467465589eeaa2500c14f65d = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_ff21f176a177f472db6b68f229501bc1 = $(`<div id="html_ff21f176a177f472db6b68f229501bc1" style="width: 100.0%; height: 100.0%;">         <h3>지명: Incheon</h3>         <p>사망자 수: 1838</p>         <p>누적 확진자 수: 1752498</p>         <p>신규 확진자 수: 1133.0</p>         <p>재감염률: 0.06</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_c36c2a42467465589eeaa2500c14f65d.setContent(html_ff21f176a177f472db6b68f229501bc1);
+            
+        
+
+        circle_5a60ec34404dff6d39e3248f328229b7.bindPopup(popup_c36c2a42467465589eeaa2500c14f65d)
+        ;
+
+        
+    
+    
+            var circle_22a0ead5c91ff258750bafecb3a03d06 = L.circle(
+                [33.49, 126.5],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3792.39, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_7f554c213e45a2ca0275221b08ac0f16);
+        
+    
+        var popup_a0178dcc120d364d9c7a3c4ccfc41dad = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_b274e556b8083a078c0070ba8b228ab3 = $(`<div id="html_b274e556b8083a078c0070ba8b228ab3" style="width: 100.0%; height: 100.0%;">         <h3>지명: Jeju</h3>         <p>사망자 수: 264</p>         <p>누적 확진자 수: 379239</p>         <p>신규 확진자 수: 401.0</p>         <p>재감염률: 0.11</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_a0178dcc120d364d9c7a3c4ccfc41dad.setContent(html_b274e556b8083a078c0070ba8b228ab3);
+            
+        
+
+        circle_22a0ead5c91ff258750bafecb3a03d06.bindPopup(popup_a0178dcc120d364d9c7a3c4ccfc41dad)
+        ;
+
+        
+    
+    
+            var circle_c8dc630c25297e99376d36ad0611398a = L.circle(
+                [35.82, 127.11],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10085.85, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_7f554c213e45a2ca0275221b08ac0f16);
+        
+    
+        var popup_ff310806482234b22000733126ce19f9 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_19799d27ca6b16cf52cf2d7946df16d5 = $(`<div id="html_19799d27ca6b16cf52cf2d7946df16d5" style="width: 100.0%; height: 100.0%;">         <h3>지명: Jeollabuk</h3>         <p>사망자 수: 1180</p>         <p>누적 확진자 수: 1008585</p>         <p>신규 확진자 수: 859.0</p>         <p>재감염률: 0.09</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_ff310806482234b22000733126ce19f9.setContent(html_19799d27ca6b16cf52cf2d7946df16d5);
+            
+        
+
+        circle_c8dc630c25297e99376d36ad0611398a.bindPopup(popup_ff310806482234b22000733126ce19f9)
+        ;
+
+        
+    
+    
+            var circle_d7fc409d3775b2a690198d3d33642ba2 = L.circle(
+                [34.81, 126.46],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9846.2, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_7f554c213e45a2ca0275221b08ac0f16);
+        
+    
+        var popup_70b7b3890b9d8c9e6bff0c42304b0c7b = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_1b45aa0d1599ada3058d9aef49b2e4c7 = $(`<div id="html_1b45aa0d1599ada3058d9aef49b2e4c7" style="width: 100.0%; height: 100.0%;">         <h3>지명: Jeollanam</h3>         <p>사망자 수: 928</p>         <p>누적 확진자 수: 984620</p>         <p>신규 확진자 수: 885.0</p>         <p>재감염률: 0.09</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_70b7b3890b9d8c9e6bff0c42304b0c7b.setContent(html_1b45aa0d1599ada3058d9aef49b2e4c7);
+            
+        
+
+        circle_d7fc409d3775b2a690198d3d33642ba2.bindPopup(popup_70b7b3890b9d8c9e6bff0c42304b0c7b)
+        ;
+
+        
+    
+    
+            var circle_6ebd36bbc74a721d6aedb370e14d5b86 = L.circle(
+                [36.48, 127.29],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2387.64, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_7f554c213e45a2ca0275221b08ac0f16);
+        
+    
+        var popup_a234ceb687e283066bf5a89906fcfed0 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_a9ef9582b7a2ebb9aa489a365997abf8 = $(`<div id="html_a9ef9582b7a2ebb9aa489a365997abf8" style="width: 100.0%; height: 100.0%;">         <h3>지명: Sejong</h3>         <p>사망자 수: 54</p>         <p>누적 확진자 수: 238764</p>         <p>신규 확진자 수: 186.0</p>         <p>재감염률: 0.08</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_a234ceb687e283066bf5a89906fcfed0.setContent(html_a9ef9582b7a2ebb9aa489a365997abf8);
+            
+        
+
+        circle_6ebd36bbc74a721d6aedb370e14d5b86.bindPopup(popup_a234ceb687e283066bf5a89906fcfed0)
+        ;
+
+        
+    
+    
+            var circle_8d2b4094355a1ad79c658b67148ead83 = L.circle(
+                [37.56, 126.98],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 58570.87, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_7f554c213e45a2ca0275221b08ac0f16);
+        
+    
+        var popup_dc065634a5409a56f685d4642eb418f8 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_4e5cb867eb05443247d6a71a8f18b082 = $(`<div id="html_4e5cb867eb05443247d6a71a8f18b082" style="width: 100.0%; height: 100.0%;">         <h3>지명: Seoul</h3>         <p>사망자 수: 6246</p>         <p>누적 확진자 수: 5857087</p>         <p>신규 확진자 수: 4042.0</p>         <p>재감염률: 0.07</p>         <p>재감염자 수: 3.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_dc065634a5409a56f685d4642eb418f8.setContent(html_4e5cb867eb05443247d6a71a8f18b082);
+            
+        
+
+        circle_8d2b4094355a1ad79c658b67148ead83.bindPopup(popup_dc065634a5409a56f685d4642eb418f8)
+        ;
+
+        
+    
+    
+            var circle_7c249acd305cafcfafbff38ae62cc87f = L.circle(
+                [35.54, 129.31],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6448.28, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_7f554c213e45a2ca0275221b08ac0f16);
+        
+    
+        var popup_2ca130e12f1bd2275f6643c48a2c0a8f = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_48d95bec23142aced8e01d2422a245e8 = $(`<div id="html_48d95bec23142aced8e01d2422a245e8" style="width: 100.0%; height: 100.0%;">         <h3>지명: Ulsan</h3>         <p>사망자 수: 517</p>         <p>누적 확진자 수: 644828</p>         <p>신규 확진자 수: 691.0</p>         <p>재감염률: 0.11</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_2ca130e12f1bd2275f6643c48a2c0a8f.setContent(html_48d95bec23142aced8e01d2422a245e8);
+            
+        
+
+        circle_7c249acd305cafcfafbff38ae62cc87f.bindPopup(popup_2ca130e12f1bd2275f6643c48a2c0a8f)
+        ;
+
+        
+    
+    
+            marker_cluster_7f554c213e45a2ca0275221b08ac0f16.addTo(map_cb138ccb08de343fb5e4ec62c0a9c301);
+        
+    
+            var marker_896cdf4efa30dfcf2143b9bc6affc180 = L.marker(
+                [35.18, 129.08],
+                {}
+            ).addTo(map_cb138ccb08de343fb5e4ec62c0a9c301);
+        
+    
+            var icon_69510c51e4b446486d50c93f5d261dcf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_896cdf4efa30dfcf2143b9bc6affc180.setIcon(icon_69510c51e4b446486d50c93f5d261dcf);
+        
+    
+        var popup_b006d46600c664c20de799b25c9aeef1 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_15717676cec84f0bd4cdf7320d615fbc = $(`<div id="html_15717676cec84f0bd4cdf7320d615fbc" style="width: 100.0%; height: 100.0%;">         <h3>지명: Busan</h3>         <p>사망자 수: 2772</p>         <p>누적 확진자 수: 1790783</p>         <p>신규 확진자 수: 1635.0</p>         <p>재감염률: 0.09</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_b006d46600c664c20de799b25c9aeef1.setContent(html_15717676cec84f0bd4cdf7320d615fbc);
+            
+        
+
+        marker_896cdf4efa30dfcf2143b9bc6affc180.bindPopup(popup_b006d46600c664c20de799b25c9aeef1)
+        ;
+
+        
+    
+    
+            var marker_f89fceb9e2c8f4fea3ac9672e5fea18f = L.marker(
+                [35.18, 129.08],
+                {}
+            ).addTo(map_cb138ccb08de343fb5e4ec62c0a9c301);
+        
+    
+            var icon_97249d6b37ca227ccec51df4082c26f2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f89fceb9e2c8f4fea3ac9672e5fea18f.setIcon(icon_97249d6b37ca227ccec51df4082c26f2);
+        
+    
+        var popup_fb06dc832a5804013bc87c16d7dc5e6c = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_51c1440f191931cdb1b9bcaf9fec6046 = $(`<div id="html_51c1440f191931cdb1b9bcaf9fec6046" style="width: 100.0%; height: 100.0%;">         <h3>지명: Chungcheongbuk</h3>         <p>사망자 수: 1003</p>         <p>누적 확진자 수: 944195</p>         <p>신규 확진자 수: 710.0</p>         <p>재감염률: 0.08</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_fb06dc832a5804013bc87c16d7dc5e6c.setContent(html_51c1440f191931cdb1b9bcaf9fec6046);
+            
+        
+
+        marker_f89fceb9e2c8f4fea3ac9672e5fea18f.bindPopup(popup_fb06dc832a5804013bc87c16d7dc5e6c)
+        ;
+
+        
+    
+    
+            var marker_7f7a053c60e9d4b98e40a95f84ea9f27 = L.marker(
+                [35.18, 129.08],
+                {}
+            ).addTo(map_cb138ccb08de343fb5e4ec62c0a9c301);
+        
+    
+            var icon_449f5c1db03d9c33e2815a6317c35edf = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_7f7a053c60e9d4b98e40a95f84ea9f27.setIcon(icon_449f5c1db03d9c33e2815a6317c35edf);
+        
+    
+        var popup_3017e719d124aedf396eb8b233c7db3b = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_0630d9a4ffbb98005c6446ceb5f56559 = $(`<div id="html_0630d9a4ffbb98005c6446ceb5f56559" style="width: 100.0%; height: 100.0%;">         <h3>지명: Chungcheongnam</h3>         <p>사망자 수: 1523</p>         <p>누적 확진자 수: 1219554</p>         <p>신규 확진자 수: 984.0</p>         <p>재감염률: 0.08</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_3017e719d124aedf396eb8b233c7db3b.setContent(html_0630d9a4ffbb98005c6446ceb5f56559);
+            
+        
+
+        marker_7f7a053c60e9d4b98e40a95f84ea9f27.bindPopup(popup_3017e719d124aedf396eb8b233c7db3b)
+        ;
+
+        
+    
+    
+            var marker_826c5eae25036647ee3c5e838b50883f = L.marker(
+                [35.87, 128.6],
+                {}
+            ).addTo(map_cb138ccb08de343fb5e4ec62c0a9c301);
+        
+    
+            var icon_9243ca822853d5eff34a7cf2fd09b484 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_826c5eae25036647ee3c5e838b50883f.setIcon(icon_9243ca822853d5eff34a7cf2fd09b484);
+        
+    
+        var popup_b40194279fc20b5d918a25b4667bbe9b = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_2af33f41a25afda55f35b0c9b35e7e30 = $(`<div id="html_2af33f41a25afda55f35b0c9b35e7e30" style="width: 100.0%; height: 100.0%;">         <h3>지명: Daegu</h3>         <p>사망자 수: 1937</p>         <p>누적 확진자 수: 1314138</p>         <p>신규 확진자 수: 1180.0</p>         <p>재감염률: 0.09</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_b40194279fc20b5d918a25b4667bbe9b.setContent(html_2af33f41a25afda55f35b0c9b35e7e30);
+            
+        
+
+        marker_826c5eae25036647ee3c5e838b50883f.bindPopup(popup_b40194279fc20b5d918a25b4667bbe9b)
+        ;
+
+        
+    
+    
+            var marker_0a77811d67315b7a0cd2e534b31083d1 = L.marker(
+                [36.35, 127.39],
+                {}
+            ).addTo(map_cb138ccb08de343fb5e4ec62c0a9c301);
+        
+    
+            var icon_716bb5b2961de8bb15fb171d80d1f312 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_0a77811d67315b7a0cd2e534b31083d1.setIcon(icon_716bb5b2961de8bb15fb171d80d1f312);
+        
+    
+        var popup_7aa1f9776b74ebc395124c981c8dc5c5 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_b51601146f9aa97faf35d7912178908c = $(`<div id="html_b51601146f9aa97faf35d7912178908c" style="width: 100.0%; height: 100.0%;">         <h3>지명: Daejeon</h3>         <p>사망자 수: 916</p>         <p>누적 확진자 수: 879398</p>         <p>신규 확진자 수: 612.0</p>         <p>재감염률: 0.07</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_7aa1f9776b74ebc395124c981c8dc5c5.setContent(html_b51601146f9aa97faf35d7912178908c);
+            
+        
+
+        marker_0a77811d67315b7a0cd2e534b31083d1.bindPopup(popup_7aa1f9776b74ebc395124c981c8dc5c5)
+        ;
+
+        
+    
+    
+            var marker_13196d0fc55c1ccd0fa75d1ed7766fe1 = L.marker(
+                [37.88, 127.73],
+                {}
+            ).addTo(map_cb138ccb08de343fb5e4ec62c0a9c301);
+        
+    
+            var icon_8316cb662c29afcb8b4e4deecc2b8648 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_13196d0fc55c1ccd0fa75d1ed7766fe1.setIcon(icon_8316cb662c29afcb8b4e4deecc2b8648);
+        
+    
+        var popup_701c151a6abdd4ec221b9ab52a90a21a = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_7e04084a45277e4791799d0a978d7869 = $(`<div id="html_7e04084a45277e4791799d0a978d7869" style="width: 100.0%; height: 100.0%;">         <h3>지명: Gangwon</h3>         <p>사망자 수: 1277</p>         <p>누적 확진자 수: 887673</p>         <p>신규 확진자 수: 633.0</p>         <p>재감염률: 0.07</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_701c151a6abdd4ec221b9ab52a90a21a.setContent(html_7e04084a45277e4791799d0a978d7869);
+            
+        
+
+        marker_13196d0fc55c1ccd0fa75d1ed7766fe1.bindPopup(popup_701c151a6abdd4ec221b9ab52a90a21a)
+        ;
+
+        
+    
+    
+            var marker_26410e2f9ddda283d1d2933cb4346e45 = L.marker(
+                [35.16, 126.85],
+                {}
+            ).addTo(map_cb138ccb08de343fb5e4ec62c0a9c301);
+        
+    
+            var icon_ef1bd6f93e0931a522e703f848bd7b49 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_26410e2f9ddda283d1d2933cb4346e45.setIcon(icon_ef1bd6f93e0931a522e703f848bd7b49);
+        
+    
+        var popup_0a70bafdc5af7ecda72f5fc680d1b96d = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_699e960757f9e0b962eead82d1e89344 = $(`<div id="html_699e960757f9e0b962eead82d1e89344" style="width: 100.0%; height: 100.0%;">         <h3>지명: Gwangju</h3>         <p>사망자 수: 804</p>         <p>누적 확진자 수: 877111</p>         <p>신규 확진자 수: 759.0</p>         <p>재감염률: 0.09</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_0a70bafdc5af7ecda72f5fc680d1b96d.setContent(html_699e960757f9e0b962eead82d1e89344);
+            
+        
+
+        marker_26410e2f9ddda283d1d2933cb4346e45.bindPopup(popup_0a70bafdc5af7ecda72f5fc680d1b96d)
+        ;
+
+        
+    
+    
+            var marker_38a1e5131ddeec4f3cecb695514c1b13 = L.marker(
+                [37.27, 127.01],
+                {}
+            ).addTo(map_cb138ccb08de343fb5e4ec62c0a9c301);
+        
+    
+            var icon_30271033e28c61a369d20287087230a3 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_38a1e5131ddeec4f3cecb695514c1b13.setIcon(icon_30271033e28c61a369d20287087230a3);
+        
+    
+        var popup_f448f245a35cb3530b3893ac6c9f7d16 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_b2b4966bddaf286f0928f193d0a65923 = $(`<div id="html_b2b4966bddaf286f0928f193d0a65923" style="width: 100.0%; height: 100.0%;">         <h3>지명: Gyeonggi</h3>         <p>사망자 수: 8209</p>         <p>누적 확진자 수: 8153725</p>         <p>신규 확진자 수: 5674.0</p>         <p>재감염률: 0.07</p>         <p>재감염자 수: 4.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_f448f245a35cb3530b3893ac6c9f7d16.setContent(html_b2b4966bddaf286f0928f193d0a65923);
+            
+        
+
+        marker_38a1e5131ddeec4f3cecb695514c1b13.bindPopup(popup_f448f245a35cb3530b3893ac6c9f7d16)
+        ;
+
+        
+    
+    
+            var marker_e8558fa378badc0755e22ec021cbae40 = L.marker(
+                [36.58, 128.51],
+                {}
+            ).addTo(map_cb138ccb08de343fb5e4ec62c0a9c301);
+        
+    
+            var icon_45b7df9ae4be7dbf6479b26950ec4d9a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_e8558fa378badc0755e22ec021cbae40.setIcon(icon_45b7df9ae4be7dbf6479b26950ec4d9a);
+        
+    
+        var popup_97e8b6128d15630c73c662ed5f16d999 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_a57b1856a9ac6e817c4594fb3aa557ae = $(`<div id="html_a57b1856a9ac6e817c4594fb3aa557ae" style="width: 100.0%; height: 100.0%;">         <h3>지명: Gyeongsangbuk</h3>         <p>사망자 수: 2027</p>         <p>누적 확진자 수: 1376426</p>         <p>신규 확진자 수: 1345.0</p>         <p>재감염률: 0.1</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_97e8b6128d15630c73c662ed5f16d999.setContent(html_a57b1856a9ac6e817c4594fb3aa557ae);
+            
+        
+
+        marker_e8558fa378badc0755e22ec021cbae40.bindPopup(popup_97e8b6128d15630c73c662ed5f16d999)
+        ;
+
+        
+    
+    
+            var marker_44bb1baa9daccf5f69787de1d0f3ee50 = L.marker(
+                [35.23, 128.69],
+                {}
+            ).addTo(map_cb138ccb08de343fb5e4ec62c0a9c301);
+        
+    
+            var icon_c76b33243c0b199bc803771a30d18526 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_44bb1baa9daccf5f69787de1d0f3ee50.setIcon(icon_c76b33243c0b199bc803771a30d18526);
+        
+    
+        var popup_b68c8ce08f16d701c17c60e9f3b0cb97 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_5dda9cc1bfc686fdaee09435151a2674 = $(`<div id="html_5dda9cc1bfc686fdaee09435151a2674" style="width: 100.0%; height: 100.0%;">         <h3>지명: Gyeongsangnam</h3>         <p>사망자 수: 1850</p>         <p>누적 확진자 수: 1804812</p>         <p>신규 확진자 수: 1631.0</p>         <p>재감염률: 0.09</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_b68c8ce08f16d701c17c60e9f3b0cb97.setContent(html_5dda9cc1bfc686fdaee09435151a2674);
+            
+        
+
+        marker_44bb1baa9daccf5f69787de1d0f3ee50.bindPopup(popup_b68c8ce08f16d701c17c60e9f3b0cb97)
+        ;
+
+        
+    
+    
+            var marker_c30b8fbb8f39d748b48cfc7e6564137c = L.marker(
+                [37.45, 126.71],
+                {}
+            ).addTo(map_cb138ccb08de343fb5e4ec62c0a9c301);
+        
+    
+            var icon_daa2bd9c263443218bdd47e1c5b7aae4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_c30b8fbb8f39d748b48cfc7e6564137c.setIcon(icon_daa2bd9c263443218bdd47e1c5b7aae4);
+        
+    
+        var popup_540b72e6c0a846dd4b27bd70c7b69b78 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_191160bef4f4915ed637eea924aeca9c = $(`<div id="html_191160bef4f4915ed637eea924aeca9c" style="width: 100.0%; height: 100.0%;">         <h3>지명: Incheon</h3>         <p>사망자 수: 1838</p>         <p>누적 확진자 수: 1752498</p>         <p>신규 확진자 수: 1133.0</p>         <p>재감염률: 0.06</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_540b72e6c0a846dd4b27bd70c7b69b78.setContent(html_191160bef4f4915ed637eea924aeca9c);
+            
+        
+
+        marker_c30b8fbb8f39d748b48cfc7e6564137c.bindPopup(popup_540b72e6c0a846dd4b27bd70c7b69b78)
+        ;
+
+        
+    
+    
+            var marker_7520046e6693f735e7460a7a9af7ba0c = L.marker(
+                [33.49, 126.5],
+                {}
+            ).addTo(map_cb138ccb08de343fb5e4ec62c0a9c301);
+        
+    
+            var icon_17bccfd922649f00b5db271c66819e0d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_7520046e6693f735e7460a7a9af7ba0c.setIcon(icon_17bccfd922649f00b5db271c66819e0d);
+        
+    
+        var popup_838e98a6a8c7555b98793622b25b5d37 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_c05f56ccff086d8d3994324cf55d9690 = $(`<div id="html_c05f56ccff086d8d3994324cf55d9690" style="width: 100.0%; height: 100.0%;">         <h3>지명: Jeju</h3>         <p>사망자 수: 264</p>         <p>누적 확진자 수: 379239</p>         <p>신규 확진자 수: 401.0</p>         <p>재감염률: 0.11</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_838e98a6a8c7555b98793622b25b5d37.setContent(html_c05f56ccff086d8d3994324cf55d9690);
+            
+        
+
+        marker_7520046e6693f735e7460a7a9af7ba0c.bindPopup(popup_838e98a6a8c7555b98793622b25b5d37)
+        ;
+
+        
+    
+    
+            var marker_da3758f762cae937c04683ccf4f10a03 = L.marker(
+                [35.82, 127.11],
+                {}
+            ).addTo(map_cb138ccb08de343fb5e4ec62c0a9c301);
+        
+    
+            var icon_b2a9bf0774b69a9424259c48550c1436 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_da3758f762cae937c04683ccf4f10a03.setIcon(icon_b2a9bf0774b69a9424259c48550c1436);
+        
+    
+        var popup_7f3213921108ba53431da734c5b93a37 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_49e805d480169067215a0bf8f7e131e8 = $(`<div id="html_49e805d480169067215a0bf8f7e131e8" style="width: 100.0%; height: 100.0%;">         <h3>지명: Jeollabuk</h3>         <p>사망자 수: 1180</p>         <p>누적 확진자 수: 1008585</p>         <p>신규 확진자 수: 859.0</p>         <p>재감염률: 0.09</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_7f3213921108ba53431da734c5b93a37.setContent(html_49e805d480169067215a0bf8f7e131e8);
+            
+        
+
+        marker_da3758f762cae937c04683ccf4f10a03.bindPopup(popup_7f3213921108ba53431da734c5b93a37)
+        ;
+
+        
+    
+    
+            var marker_bc1dd6b7f535d926f3380b9f22d797e8 = L.marker(
+                [34.81, 126.46],
+                {}
+            ).addTo(map_cb138ccb08de343fb5e4ec62c0a9c301);
+        
+    
+            var icon_f00ef3c75d4f921171d91efed1561cb4 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_bc1dd6b7f535d926f3380b9f22d797e8.setIcon(icon_f00ef3c75d4f921171d91efed1561cb4);
+        
+    
+        var popup_921ba497bcbacd7986de75c7a181ae02 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_93f8a31520be7eeca73ac6af32f638af = $(`<div id="html_93f8a31520be7eeca73ac6af32f638af" style="width: 100.0%; height: 100.0%;">         <h3>지명: Jeollanam</h3>         <p>사망자 수: 928</p>         <p>누적 확진자 수: 984620</p>         <p>신규 확진자 수: 885.0</p>         <p>재감염률: 0.09</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_921ba497bcbacd7986de75c7a181ae02.setContent(html_93f8a31520be7eeca73ac6af32f638af);
+            
+        
+
+        marker_bc1dd6b7f535d926f3380b9f22d797e8.bindPopup(popup_921ba497bcbacd7986de75c7a181ae02)
+        ;
+
+        
+    
+    
+            var marker_06b8973b89edf5864a5f5df6ba8ece72 = L.marker(
+                [36.48, 127.29],
+                {}
+            ).addTo(map_cb138ccb08de343fb5e4ec62c0a9c301);
+        
+    
+            var icon_fca9317f464c493f54a06a5392ec1d41 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_06b8973b89edf5864a5f5df6ba8ece72.setIcon(icon_fca9317f464c493f54a06a5392ec1d41);
+        
+    
+        var popup_f6bb3413e330f12c757e4bedc8c369e9 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_ff578f0ec0c5a5f687cea142510ef18f = $(`<div id="html_ff578f0ec0c5a5f687cea142510ef18f" style="width: 100.0%; height: 100.0%;">         <h3>지명: Sejong</h3>         <p>사망자 수: 54</p>         <p>누적 확진자 수: 238764</p>         <p>신규 확진자 수: 186.0</p>         <p>재감염률: 0.08</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_f6bb3413e330f12c757e4bedc8c369e9.setContent(html_ff578f0ec0c5a5f687cea142510ef18f);
+            
+        
+
+        marker_06b8973b89edf5864a5f5df6ba8ece72.bindPopup(popup_f6bb3413e330f12c757e4bedc8c369e9)
+        ;
+
+        
+    
+    
+            var marker_df7d3feb5f421368019b93005b826ca5 = L.marker(
+                [37.56, 126.98],
+                {}
+            ).addTo(map_cb138ccb08de343fb5e4ec62c0a9c301);
+        
+    
+            var icon_1810e955996f24b15ed3f46b068ce95c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_df7d3feb5f421368019b93005b826ca5.setIcon(icon_1810e955996f24b15ed3f46b068ce95c);
+        
+    
+        var popup_f9f3b251ed2de10ecb00614b95ace1e4 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_8f1e3ee0a9acff4844c39502a4ed7038 = $(`<div id="html_8f1e3ee0a9acff4844c39502a4ed7038" style="width: 100.0%; height: 100.0%;">         <h3>지명: Seoul</h3>         <p>사망자 수: 6246</p>         <p>누적 확진자 수: 5857087</p>         <p>신규 확진자 수: 4042.0</p>         <p>재감염률: 0.07</p>         <p>재감염자 수: 3.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_f9f3b251ed2de10ecb00614b95ace1e4.setContent(html_8f1e3ee0a9acff4844c39502a4ed7038);
+            
+        
+
+        marker_df7d3feb5f421368019b93005b826ca5.bindPopup(popup_f9f3b251ed2de10ecb00614b95ace1e4)
+        ;
+
+        
+    
+    
+            var marker_dfcdbc15e29b466248baaab1b9e44f2c = L.marker(
+                [35.54, 129.31],
+                {}
+            ).addTo(map_cb138ccb08de343fb5e4ec62c0a9c301);
+        
+    
+            var icon_f3cdf56d7ed874a361a5c4f4307c3357 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_dfcdbc15e29b466248baaab1b9e44f2c.setIcon(icon_f3cdf56d7ed874a361a5c4f4307c3357);
+        
+    
+        var popup_e654dc4716d602a0b355b3353c6905ac = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_95d16598b37504f296ab6f1a4bd0801b = $(`<div id="html_95d16598b37504f296ab6f1a4bd0801b" style="width: 100.0%; height: 100.0%;">         <h3>지명: Ulsan</h3>         <p>사망자 수: 517</p>         <p>누적 확진자 수: 644828</p>         <p>신규 확진자 수: 691.0</p>         <p>재감염률: 0.11</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-01-28</p>         </div>`)[0];
+                popup_e654dc4716d602a0b355b3353c6905ac.setContent(html_95d16598b37504f296ab6f1a4bd0801b);
+            
+        
+
+        marker_dfcdbc15e29b466248baaab1b9e44f2c.bindPopup(popup_e654dc4716d602a0b355b3353c6905ac)
+        ;
+
+        
+    
+</script>
+</html>
