@@ -1,0 +1,98 @@
+{% extends '_layouts/public.html' %}
+
+{% block title %}
+    해외 감염정보
+{% endblock %}
+
+{% block subject %}
+    해외 감염정보
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-3">
+        <form name="search" method="get" action="{{url_for('visualization.visualization_global')}}">
+            <div class="input-group mb-3">
+                <input type="date" name="date" class="form-control form-control-lg rounded-0" placeholder="일자 검색" aria-label="일자 검색" aria-describedby="button-submit">
+                <button class="btn btn-dark rounded-0" id="button-submit">일자 검색</button>
+            </div>
+        </form>
+    </div>
+    <hr class="mb-0"/>
+    <div>
+        {% if global_data %}
+            <iframe src="{{url_for('static', filename='/map/map.html')}}" title="내용" width="100%" height="480"></iframe>
+        {% else %}
+            <p>데이터 없음</p>
+        {% endif %}
+    </div>
+    <hr class="mt-0"/>
+
+
+    {% if global_data %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12 mb-4">
+                <strong>국가별 상세정보</strong>
+                <div class="table-responsive">
+                    <table class="table covid-table table-hover mt-3">
+                        <thead class="table-dark">
+                          <tr>
+                            <th scope="col">국가명</th>
+                            <th scope="col">누적 감염자수</th>
+                            <th scope="col">신규 감염자수</th>
+                            <th scope="col">사망자수</th>
+                            <th scope="col">재감염률</th>
+                            <th scope="col">재감염자 수</th>
+                          </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            {% for data in global_data %}
+                                <tr>
+                                    <td>{{data.nation}}</td>
+                                    <td>{{data.total_cases}}</td>
+                                    <td>{{data.active_cases}}</td>
+                                    <td>{{data.death_cases}}</td>
+                                    <td>{{data.re_rate}}</td>
+                                    <td>{{data.re_cases}}</td>
+                                </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-3">
+                    <nav aria-label="Page navigation rounded-0">
+                        <ul class="pagination justify-content-center">
+                            {% if page > 1 %}
+                            <li class="page-item">
+                                <a href="{{url_for('visualization.visualization_global')}}?page={{page-1}}&date={{date}}" class="page-link">이전</a>
+                            </li>
+                            {% endif %}
+                      
+                            {% for page_num in range((page-2 if page-2 > 1 else 1), (page+3 if page+3 < 10 else 10)) %}
+                              {% if page_num %}
+                                <li class="page-item {{'active' if page == page_num else ''}}">
+                                    <a href="{{url_for('visualization.visualization_global')}}?page={{page_num}}&date={{date}}" class="page-link">{{page_num}}</a>
+                                </li>
+                              {% else %}
+                                <li class="disabled page-item"><a class="page-link" href="javascript:void(0)" class="page-link">...</a></li>
+                              {% endif %}
+                            {% endfor %}
+
+                            {% if page < 9 %}
+                            <li class="page-item mb-3">
+                                <a href="{{url_for('visualization.visualization_global')}}?page={{page+1}}&date={{date}}" class="page-link">다음</a>
+                            </li>   
+                            {% endif %}
+                        </ul>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% else %}
+    <p>데이터 없음</p>
+
+    {% endif %}
+{% endblock %}

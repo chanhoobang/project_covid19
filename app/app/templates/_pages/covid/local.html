@@ -1,0 +1,173 @@
+{% extends '_layouts/public.html' %}
+
+{% block title %}
+    국내 감염정보
+{% endblock %}
+
+{% block subject %}
+    국내 감염정보
+{% endblock %}
+
+{% block content %}
+    <div class="container mt-3">
+        <form name="search" method="get" action="{{url_for('visualization.visualization_korea')}}">
+            <div class="input-group mb-3">
+                <input type="date" name="date" class="form-control form-control-lg rounded-0" placeholder="일자 검색" aria-label="일자 검색" aria-describedby="button-submit">
+                <button class="btn btn-dark rounded-0" id="button-submit">일자 검색</button>
+            </div>
+        </form>
+    </div>
+    <hr class="mb-0"/>
+    <div>
+        {% if list_age %}
+            <iframe src="{{url_for('static', filename='/map/map.html')}}" title="내용" width="100%" height="480"></iframe>
+        {% else %}
+            <p>데이터 없음</p>
+        {% endif %}
+    </div>
+    <hr class="mt-0"/>
+
+    {% if list_age %}
+
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h4 class="my-4">연령별, 성별 상세정보</h4>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 col-xl-6 mb-4">
+                <strong>연령별 상세정보</strong>
+                <div class="table-responsive">
+                    <table class="table covid-table table-hover mt-3">
+                        <thead class="table-dark">
+                          <tr>
+                            <th scope="col">연령</th>
+                            <th scope="col">누적 감염자수</th>
+                            <th scope="col">신규 감염자수</th>
+                            <th scope="col">사망자수</th>
+                            <th scope="col">재감염률</th>
+                            <th scope="col">재감염자 수</th>
+                          </tr>
+                        </thead>
+                        <tbody class="table-group-divider">
+                            <tr>
+                                <th scope="row">0~9세</th>
+                                <td>{{list_age[0]["total_cases"]}}명</td>
+                                <td>{{list_age[0]["active_cases"]}}명</td>
+                                <td>{{list_age[0]["death_cases"]}}명</td>>
+                                <td>{{list_age[0]["re_rate"]}}%</td>
+                                <td>{{list_age[0]["re_cases"]}}명</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">10대</th>
+                                <td>{{list_age[1]["total_cases"]}}명</td>
+                                <td>{{list_age[1]["active_cases"]}}명</td>
+                                <td>{{list_age[1]["death_cases"]}}명</td>>
+                                <td>{{list_age[1]["re_rate"]}}%</td>
+                                <td>{{list_age[1]["re_cases"]}}명</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">20대</th>
+                                <td>{{list_age[2]["total_cases"]}}명</td>
+                                <td>{{list_age[2]["active_cases"]}}명</td>
+                                <td>{{list_age[2]["death_cases"]}}명</td>>
+                                <td>{{list_age[2]["re_rate"]}}%</td>
+                                <td>{{list_age[2]["re_cases"]}}명</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">30대</th>
+                                <td>{{list_age[3]["total_cases"]}}명</td>
+                                <td>{{list_age[3]["active_cases"]}}명</td>
+                                <td>{{list_age[3]["death_cases"]}}명</td>>
+                                <td>{{list_age[3]["re_rate"]}}%</td>
+                                <td>{{list_age[3]["re_cases"]}}명</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">40대</th>
+                                <td>{{list_age[4]["total_cases"]}}명</td>
+                                <td>{{list_age[4]["active_cases"]}}명</td>
+                                <td>{{list_age[4]["death_cases"]}}명</td>>
+                                <td>{{list_age[4]["re_rate"]}}%</td>
+                                <td>{{list_age[4]["re_cases"]}}명</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">50대</th>
+                                <td>{{list_age[5]["total_cases"]}}명</td>
+                                <td>{{list_age[5]["active_cases"]}}명</td>
+                                <td>{{list_age[5]["death_cases"]}}명</td>>
+                                <td>{{list_age[5]["re_rate"]}}%</td>
+                                <td>{{list_age[5]["re_cases"]}}명</td>
+                            </tr>
+                            <tr>
+                                <th scope="row">60대 이상</th>
+                                <td>{{list_age[6]["total_cases"]}}명</td>
+                                <td>{{list_age[6]["active_cases"]}}명</td>
+                                <td>{{list_age[6]["death_cases"]}}명</td>>
+                                <td>{{list_age[6]["re_rate"]}}%</td>
+                                <td>{{list_age[6]["re_cases"]}}명</td>
+                            </tr>
+                        </tbody>
+                      </table>
+                </div>
+            </div>
+            <div class="col-12 col-xl-6">
+                <strong>남성, 여성(성별) 상세정보</strong>
+                <div class="row mt-3">
+                    <div class="col-12 col-lg-6">
+                        <div class="card covid-card rounded-0">
+                            <div class="card-body d-flex justify-space-between">
+                                <div class="icon bg-primary rounded-2">
+                                    <i class="bi bi-person-standing"></i>
+                                </div>
+                                <div class="count ms-4">
+                                    <p class="mb-2">
+                                        <small>총 감염자수</small>
+                                        <strong>{{list_gender[1]["total_cases"]}}명</strong>
+                                    </p>
+                                    <p class="mb-2">
+                                        <small>신규 감염자수</small>
+                                        <strong>{{list_gender[1]["active_cases"]}}명</strong>
+                                    </p>
+                                    <p class="mb-0">
+                                        <small>사망자수</small>
+                                        <strong>{{list_gender[1]["death_cases"]}}명</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-12 col-lg-6">
+                        <div class="card covid-card rounded-0">
+                            <div class="card-body d-flex justify-space-between">
+                                <div class="icon bg-danger rounded-2">
+                                    <i class="bi bi-person-standing-dress"></i>
+                                </div>
+                                <div class="count ms-4">
+                                    <p class="mb-2">
+                                        <small>총 감염자수</small>
+                                        <strong>{{list_gender[0]["total_cases"]}}명</strong>
+                                    </p>
+                                    <p class="mb-2">
+                                        <small>신규 감염자수</small>
+                                        <strong>{{list_gender[0]["active_cases"]}}명</strong>
+                                    </p>
+                                    <p class="mb-0">
+                                        <small>사망자수</small>
+                                        <strong>{{list_gender[0]["death_cases"]}}명</strong>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% else %}
+
+    <p>데이터 없음</p>
+
+    {% endif %}
+{% endblock %}
