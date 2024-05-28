@@ -49,12 +49,12 @@
                         <tbody class="table-group-divider">
                             {% for data in global_data %}
                                 <tr>
-                                    <td>{{data.nation}}</td>
-                                    <td>{{data.total_cases}}</td>
-                                    <td>{{data.active_cases}}</td>
-                                    <td>{{data.death_cases}}</td>
-                                    <td>{{data.re_rate}}</td>
-                                    <td>{{data.re_cases}}</td>
+                                    <td>{{data['nation']}}</td>
+                                    <td>{{data['total_cases']}}</td>
+                                    <td>{{data['active_cases']}}</td>
+                                    <td>{{data['death_cases']}}</td>
+                                    <td>{{data['re_rate']}}</td>
+                                    <td>{{data['re_cases']}}</td>
                                 </tr>
                             {% endfor %}
                         </tbody>
@@ -66,9 +66,6 @@
                             {% if page > 1 %}
                             <li class="page-item">
                                 <a href="{{url_for('visualization.visualization_global')}}?page=1&date={{date}}" class="page-link">처음</a>
-                            </li>
-                            <li class="page-item">
-                                <a href="{{url_for('visualization.visualization_global')}}?page={{page}}&date={{date}}" class="page-link">이전</a>
                             </li>
                             {% endif %}
 
@@ -92,9 +89,6 @@
                             {% endfor %}
 
                             {% if page < total_pages %}
-                            <li class="page-item">
-                                <a href="{{url_for('visualization.visualization_global')}}?page={{page}}&date={{date}}" class="page-link">다음</a>
-                            </li>
                             <li class="page-item">
                                 <a href="{{url_for('visualization.visualization_global')}}?page={{total_pages}}&date={{date}}" class="page-link">마지막</a>
                             </li>

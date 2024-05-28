@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from flask_sqlalchemy.pagination import Pagination
 
-from sqlalchemy import select
+from sqlalchemy import desc, select
 from app.database import SESSION
 
 
@@ -170,6 +170,7 @@ class Common:
     
     @staticmethod
     def add_comma(num):
+        num = int(num)
         if num < 1000:
             comma_num = str(num)[-3:]
         elif (num > 1000) & (num < 1000000):
@@ -177,6 +178,10 @@ class Common:
         elif (num > 1000000) & (num < 1000000000):
             comma_num = str(num)[-9:-6]+","+str(num)[-6:-3]+","+str(num)[-3:]
         return comma_num
+    
+    @staticmethod
+    def find_latest_date(model):
+        return SESSION.query(model).order_by(desc(getattr(model, 'data_date'))).limit(1).all()
 
 
 
