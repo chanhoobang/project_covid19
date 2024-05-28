@@ -36,20 +36,22 @@ def visualization_korea():
 # 해외 맵을 그리는 라우터
 @visualization_bp.route("/visualization_global", methods=["GET"])
 def visualization_global():
+    date = request.args.get("date")
+
     if os.path.exists(file_path):
         os.remove("app/static/map/map.html")
 
-    date = f'{request.args.get("date")} 00:00:00'
+    print(date)
+
+    visualization_modules.draw_map("global", date+" 00:00:00")
+
     page = request.args.get('page', 1, type=int)
     per_page = 20
 
     items, total_pages = Common.paginate(GlobalData, date, page, per_page)
     columns = Common.get_columns(GlobalData)
-    visualization_modules.draw_map('global', date)
-
-    visualization_modules.draw_map("global", date+" 00:00:00")
     
-    temp_global_data = global_data
+    temp_global_data = items
 
     for idx in range(len(temp_global_data)):
         temp_global_data[idx].total_cases = Common.add_comma(temp_global_data[idx].total_cases)
@@ -57,7 +59,7 @@ def visualization_global():
         temp_global_data[idx].death_cases = Common.add_comma(temp_global_data[idx].death_cases)
         temp_global_data[idx].re_cases = Common.add_comma(temp_global_data[idx].re_cases)
 
-    return render_template('_pages/covid/global.html', global_data=temp_global_data, page=page, date=date)
+
     return render_template(
         '_pages/covid/global.html',
         items=items,
@@ -65,7 +67,7 @@ def visualization_global():
         page=page,
         date=request.args.get("date"),
         total_pages=total_pages,
-        global_data=items
+        global_data=temp_global_data
     )
 
 

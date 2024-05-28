@@ -171,7 +171,7 @@ class Common:
     @staticmethod
     def add_comma(num):
         if num < 1000:
-            comma_num = str(num)[0]+","+str(num)[-3:]
+            comma_num = str(num)[-3:]
         elif (num > 1000) & (num < 1000000):
             comma_num = str(num)[-6:-3]+","+str(num)[-3:]
         elif (num > 1000000) & (num < 1000000000):
