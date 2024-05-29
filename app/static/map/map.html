@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4a9dd19c0181f8ba31a0c405ea7c8af6 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_4a9dd19c0181f8ba31a0c405ea7c8af6" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4a9dd19c0181f8ba31a0c405ea7c8af6 = L.map(
+                "map_4a9dd19c0181f8ba31a0c405ea7c8af6",
+                {
+                    center: [37.0, 127.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 10,
+                    zoomControl: true,
+                    preferCanvas: false,
+                    locatzoomStart: 10,
+                }
+            );
+            L.control.scale().addTo(map_4a9dd19c0181f8ba31a0c405ea7c8af6);
+
+            
+
+        
+    
+            var tile_layer_18df58cf4f7036a2a96715ef0e357f42 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_18df58cf4f7036a2a96715ef0e357f42.addTo(map_4a9dd19c0181f8ba31a0c405ea7c8af6);
+        
+    
+            var marker_cluster_1788f56984cf311b9cf7a61689c403fa = L.markerClusterGroup(
+                {}
+            );
+        
+    
+            var circle_8820876324cd7c8b17efd7d66e526c9f = L.circle(
+                [35.18, 129.08],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18364.49, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_1788f56984cf311b9cf7a61689c403fa);
+        
+    
+        var popup_225398bbcd02f1595c0619268684be78 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_2e7117f5af58ae2665c43d11457e3c67 = $(`<div id="html_2e7117f5af58ae2665c43d11457e3c67" style="width: 100.0%; height: 100.0%;">         <h3>지명: 부산광역시</h3>         <p>사망자 수: 2830</p>         <p>누적 확진자 수: 1836449</p>         <p>신규 확진자 수: 437.0</p>         <p>재감염률: 0.02</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_225398bbcd02f1595c0619268684be78.setContent(html_2e7117f5af58ae2665c43d11457e3c67);
+            
+        
+
+        circle_8820876324cd7c8b17efd7d66e526c9f.bindPopup(popup_225398bbcd02f1595c0619268684be78)
+        ;
+
+        
+    
+    
+            var circle_665a054dad3628702e3dffcb266957ea = L.circle(
+                [36.63, 127.49],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9734.51, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_1788f56984cf311b9cf7a61689c403fa);
+        
+    
+        var popup_fd59721b889269c8b8033e1dc6e18d05 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_f5c3e73b3f02acf369950179444abe83 = $(`<div id="html_f5c3e73b3f02acf369950179444abe83" style="width: 100.0%; height: 100.0%;">         <h3>지명: 충청북도</h3>         <p>사망자 수: 1041</p>         <p>누적 확진자 수: 973451</p>         <p>신규 확진자 수: 507.0</p>         <p>재감염률: 0.05</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_fd59721b889269c8b8033e1dc6e18d05.setContent(html_f5c3e73b3f02acf369950179444abe83);
+            
+        
+
+        circle_665a054dad3628702e3dffcb266957ea.bindPopup(popup_fd59721b889269c8b8033e1dc6e18d05)
+        ;
+
+        
+    
+    
+            var circle_3945e11ce6f4ce3ffb473b32728ff569 = L.circle(
+                [36.51, 126.8],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 12555.56, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_1788f56984cf311b9cf7a61689c403fa);
+        
+    
+        var popup_5affb14e54414678297fa13341a73491 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_291247004a4ba4821a9639e5c195ffd7 = $(`<div id="html_291247004a4ba4821a9639e5c195ffd7" style="width: 100.0%; height: 100.0%;">         <h3>지명: 충청남도</h3>         <p>사망자 수: 1576</p>         <p>누적 확진자 수: 1255556</p>         <p>신규 확진자 수: 743.0</p>         <p>재감염률: 0.06</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_5affb14e54414678297fa13341a73491.setContent(html_291247004a4ba4821a9639e5c195ffd7);
+            
+        
+
+        circle_3945e11ce6f4ce3ffb473b32728ff569.bindPopup(popup_5affb14e54414678297fa13341a73491)
+        ;
+
+        
+    
+    
+            var circle_0d98a55578f7c15f87239f3cd852da21 = L.circle(
+                [35.87, 128.6],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 13532.29, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_1788f56984cf311b9cf7a61689c403fa);
+        
+    
+        var popup_521d15f99c69b15af3f84eceb1fc3981 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_7237d92e22be6a56194962f6f1e74cba = $(`<div id="html_7237d92e22be6a56194962f6f1e74cba" style="width: 100.0%; height: 100.0%;">         <h3>지명: 대구광역시</h3>         <p>사망자 수: 1997</p>         <p>누적 확진자 수: 1353229</p>         <p>신규 확진자 수: 513.0</p>         <p>재감염률: 0.04</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_521d15f99c69b15af3f84eceb1fc3981.setContent(html_7237d92e22be6a56194962f6f1e74cba);
+            
+        
+
+        circle_0d98a55578f7c15f87239f3cd852da21.bindPopup(popup_521d15f99c69b15af3f84eceb1fc3981)
+        ;
+
+        
+    
+    
+            var circle_8d274d91fc731645a0c36a4a0a723fa4 = L.circle(
+                [36.35, 127.39],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9054.3, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_1788f56984cf311b9cf7a61689c403fa);
+        
+    
+        var popup_55658b2129ba6a0e8956df6e93008b7a = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_e88c0774628ef00f3ea4416a4e596e45 = $(`<div id="html_e88c0774628ef00f3ea4416a4e596e45" style="width: 100.0%; height: 100.0%;">         <h3>지명: 대전광역시</h3>         <p>사망자 수: 947</p>         <p>누적 확진자 수: 905430</p>         <p>신규 확진자 수: 489.0</p>         <p>재감염률: 0.05</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_55658b2129ba6a0e8956df6e93008b7a.setContent(html_e88c0774628ef00f3ea4416a4e596e45);
+            
+        
+
+        circle_8d274d91fc731645a0c36a4a0a723fa4.bindPopup(popup_55658b2129ba6a0e8956df6e93008b7a)
+        ;
+
+        
+    
+    
+            var circle_2cd657b9caf344d4f08e0988c6443719 = L.circle(
+                [37.88, 127.73],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9102.88, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_1788f56984cf311b9cf7a61689c403fa);
+        
+    
+        var popup_38da556b10e0bc34525a7776ca888d97 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_d264d6238393b9002f71d405bc24bb0d = $(`<div id="html_d264d6238393b9002f71d405bc24bb0d" style="width: 100.0%; height: 100.0%;">         <h3>지명: 강원특별자치도</h3>         <p>사망자 수: 1326</p>         <p>누적 확진자 수: 910288</p>         <p>신규 확진자 수: 417.0</p>         <p>재감염률: 0.05</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_38da556b10e0bc34525a7776ca888d97.setContent(html_d264d6238393b9002f71d405bc24bb0d);
+            
+        
+
+        circle_2cd657b9caf344d4f08e0988c6443719.bindPopup(popup_38da556b10e0bc34525a7776ca888d97)
+        ;
+
+        
+    
+    
+            var circle_e42d1488fa631157eb4fb3753572ddb5 = L.circle(
+                [35.16, 126.85],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 9040.74, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_1788f56984cf311b9cf7a61689c403fa);
+        
+    
+        var popup_3e607ce875fd9a03d118eeeac0c6bb8a = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_1fccff1c667b9b10a940e3de58777978 = $(`<div id="html_1fccff1c667b9b10a940e3de58777978" style="width: 100.0%; height: 100.0%;">         <h3>지명: 광주광역시</h3>         <p>사망자 수: 825</p>         <p>누적 확진자 수: 904074</p>         <p>신규 확진자 수: 562.0</p>         <p>재감염률: 0.06</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_3e607ce875fd9a03d118eeeac0c6bb8a.setContent(html_1fccff1c667b9b10a940e3de58777978);
+            
+        
+
+        circle_e42d1488fa631157eb4fb3753572ddb5.bindPopup(popup_3e607ce875fd9a03d118eeeac0c6bb8a)
+        ;
+
+        
+    
+    
+            var circle_19ac71359fd7622ba46df63b613e863f = L.circle(
+                [37.27, 127.01],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 83931.82, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_1788f56984cf311b9cf7a61689c403fa);
+        
+    
+        var popup_0c9fce36eb13b922aebdcb69468b5d0c = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_ae50fdf92d1f557159d027056e0e292e = $(`<div id="html_ae50fdf92d1f557159d027056e0e292e" style="width: 100.0%; height: 100.0%;">         <h3>지명: 경기도</h3>         <p>사망자 수: 8388</p>         <p>누적 확진자 수: 8393182</p>         <p>신규 확진자 수: 4873.0</p>         <p>재감염률: 0.06</p>         <p>재감염자 수: 3.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_0c9fce36eb13b922aebdcb69468b5d0c.setContent(html_ae50fdf92d1f557159d027056e0e292e);
+            
+        
+
+        circle_19ac71359fd7622ba46df63b613e863f.bindPopup(popup_0c9fce36eb13b922aebdcb69468b5d0c)
+        ;
+
+        
+    
+    
+            var circle_785aece6d67376ff6d3327eed4d21a3a = L.circle(
+                [36.58, 128.51],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 14204.83, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_1788f56984cf311b9cf7a61689c403fa);
+        
+    
+        var popup_2c0eb188c1fb6f4ffeb90ae9d53b431f = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_45ce7f3e0aa73053784f14d7b621eddd = $(`<div id="html_45ce7f3e0aa73053784f14d7b621eddd" style="width: 100.0%; height: 100.0%;">         <h3>지명: 경상북도</h3>         <p>사망자 수: 2097</p>         <p>누적 확진자 수: 1420483</p>         <p>신규 확진자 수: 511.0</p>         <p>재감염률: 0.04</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_2c0eb188c1fb6f4ffeb90ae9d53b431f.setContent(html_45ce7f3e0aa73053784f14d7b621eddd);
+            
+        
+
+        circle_785aece6d67376ff6d3327eed4d21a3a.bindPopup(popup_2c0eb188c1fb6f4ffeb90ae9d53b431f)
+        ;
+
+        
+    
+    
+            var circle_20e975efd1c6dd438c756af1ee45d621 = L.circle(
+                [35.23, 128.69],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18535.08, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_1788f56984cf311b9cf7a61689c403fa);
+        
+    
+        var popup_887648d71d7f58676b3858897cafc1a4 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_83a0d09019614144bc8406d2c5a9eecb = $(`<div id="html_83a0d09019614144bc8406d2c5a9eecb" style="width: 100.0%; height: 100.0%;">         <h3>지명: 경상남도</h3>         <p>사망자 수: 1959</p>         <p>누적 확진자 수: 1853508</p>         <p>신규 확진자 수: 564.0</p>         <p>재감염률: 0.03</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_887648d71d7f58676b3858897cafc1a4.setContent(html_83a0d09019614144bc8406d2c5a9eecb);
+            
+        
+
+        circle_20e975efd1c6dd438c756af1ee45d621.bindPopup(popup_887648d71d7f58676b3858897cafc1a4)
+        ;
+
+        
+    
+    
+            var circle_08f1667baf8c580b667c025f867d5bab = L.circle(
+                [37.45, 126.71],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 18031.0, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_1788f56984cf311b9cf7a61689c403fa);
+        
+    
+        var popup_a689ee130199a0ba193606dc7115b555 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_0b411cc8239c91094f07f5aab9e95c59 = $(`<div id="html_0b411cc8239c91094f07f5aab9e95c59" style="width: 100.0%; height: 100.0%;">         <h3>지명: 인천광역시</h3>         <p>사망자 수: 1898</p>         <p>누적 확진자 수: 1803100</p>         <p>신규 확진자 수: 1083.0</p>         <p>재감염률: 0.06</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_a689ee130199a0ba193606dc7115b555.setContent(html_0b411cc8239c91094f07f5aab9e95c59);
+            
+        
+
+        circle_08f1667baf8c580b667c025f867d5bab.bindPopup(popup_a689ee130199a0ba193606dc7115b555)
+        ;
+
+        
+    
+    
+            var circle_c282a51bee2a96c9c763e29bc9d42806 = L.circle(
+                [33.49, 126.5],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 3938.18, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_1788f56984cf311b9cf7a61689c403fa);
+        
+    
+        var popup_5f16940480f0436de27a2181ece20d42 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_47bd79a1244276bd7751a94f339d98f3 = $(`<div id="html_47bd79a1244276bd7751a94f339d98f3" style="width: 100.0%; height: 100.0%;">         <h3>지명: 제주특별자치도</h3>         <p>사망자 수: 274</p>         <p>누적 확진자 수: 393818</p>         <p>신규 확진자 수: 203.0</p>         <p>재감염률: 0.05</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_5f16940480f0436de27a2181ece20d42.setContent(html_47bd79a1244276bd7751a94f339d98f3);
+            
+        
+
+        circle_c282a51bee2a96c9c763e29bc9d42806.bindPopup(popup_5f16940480f0436de27a2181ece20d42)
+        ;
+
+        
+    
+    
+            var circle_97eb6acafd7b2400936c76fe1f192030 = L.circle(
+                [35.82, 127.11],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10430.68, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_1788f56984cf311b9cf7a61689c403fa);
+        
+    
+        var popup_b4aad1158a75e660c2252112c149ff02 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_ee41fb6a75b6beaa710d0d9176609f83 = $(`<div id="html_ee41fb6a75b6beaa710d0d9176609f83" style="width: 100.0%; height: 100.0%;">         <h3>지명: 전라북도</h3>         <p>사망자 수: 1226</p>         <p>누적 확진자 수: 1043068</p>         <p>신규 확진자 수: 537.0</p>         <p>재감염률: 0.05</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_b4aad1158a75e660c2252112c149ff02.setContent(html_ee41fb6a75b6beaa710d0d9176609f83);
+            
+        
+
+        circle_97eb6acafd7b2400936c76fe1f192030.bindPopup(popup_b4aad1158a75e660c2252112c149ff02)
+        ;
+
+        
+    
+    
+            var circle_9c21d49d21c5d7df7a54a9f16073e58e = L.circle(
+                [34.81, 126.46],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 10146.02, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_1788f56984cf311b9cf7a61689c403fa);
+        
+    
+        var popup_371a160258740b472ca66b20b55b64f6 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_f863d801475b1fc271001283004cc46e = $(`<div id="html_f863d801475b1fc271001283004cc46e" style="width: 100.0%; height: 100.0%;">         <h3>지명: 전라남도</h3>         <p>사망자 수: 995</p>         <p>누적 확진자 수: 1014602</p>         <p>신규 확진자 수: 516.0</p>         <p>재감염률: 0.05</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_371a160258740b472ca66b20b55b64f6.setContent(html_f863d801475b1fc271001283004cc46e);
+            
+        
+
+        circle_9c21d49d21c5d7df7a54a9f16073e58e.bindPopup(popup_371a160258740b472ca66b20b55b64f6)
+        ;
+
+        
+    
+    
+            var circle_e3d87836667dc982b11d6d52777f75a4 = L.circle(
+                [36.48, 127.29],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 2469.6, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_1788f56984cf311b9cf7a61689c403fa);
+        
+    
+        var popup_828e92e209ca3ee82cec29119f8dcef6 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_cccbf8dcf02a221f65047b2d0c2a730c = $(`<div id="html_cccbf8dcf02a221f65047b2d0c2a730c" style="width: 100.0%; height: 100.0%;">         <h3>지명: 세종특별자치시</h3>         <p>사망자 수: 56</p>         <p>누적 확진자 수: 246960</p>         <p>신규 확진자 수: 148.0</p>         <p>재감염률: 0.06</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_828e92e209ca3ee82cec29119f8dcef6.setContent(html_cccbf8dcf02a221f65047b2d0c2a730c);
+            
+        
+
+        circle_e3d87836667dc982b11d6d52777f75a4.bindPopup(popup_828e92e209ca3ee82cec29119f8dcef6)
+        ;
+
+        
+    
+    
+            var circle_cf44824d866b2be4d00958c82a68430b = L.circle(
+                [37.56, 126.98],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 60403.2, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_1788f56984cf311b9cf7a61689c403fa);
+        
+    
+        var popup_5cfb8667671fc99fbfb4768b908eedaa = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_f697a36e0098a269ab34879997998834 = $(`<div id="html_f697a36e0098a269ab34879997998834" style="width: 100.0%; height: 100.0%;">         <h3>지명: 서울특별시</h3>         <p>사망자 수: 6410</p>         <p>누적 확진자 수: 6040320</p>         <p>신규 확진자 수: 4253.0</p>         <p>재감염률: 0.07</p>         <p>재감염자 수: 3.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_5cfb8667671fc99fbfb4768b908eedaa.setContent(html_f697a36e0098a269ab34879997998834);
+            
+        
+
+        circle_cf44824d866b2be4d00958c82a68430b.bindPopup(popup_5cfb8667671fc99fbfb4768b908eedaa)
+        ;
+
+        
+    
+    
+            var circle_0a5450993413fd08ea721168603d0a55 = L.circle(
+                [35.54, 129.31],
+                {"bubblingMouseEvents": true, "color": "#3388ff", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#3388ff", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 6603.67, "stroke": true, "weight": 3}
+            ).addTo(marker_cluster_1788f56984cf311b9cf7a61689c403fa);
+        
+    
+        var popup_f7a50de6002ce4cb3413ac5b4dbf5c30 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_e67a3ba520fd79c3278d0a7b96090181 = $(`<div id="html_e67a3ba520fd79c3278d0a7b96090181" style="width: 100.0%; height: 100.0%;">         <h3>지명: 울산광역시</h3>         <p>사망자 수: 531</p>         <p>누적 확진자 수: 660367</p>         <p>신규 확진자 수: 138.0</p>         <p>재감염률: 0.02</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_f7a50de6002ce4cb3413ac5b4dbf5c30.setContent(html_e67a3ba520fd79c3278d0a7b96090181);
+            
+        
+
+        circle_0a5450993413fd08ea721168603d0a55.bindPopup(popup_f7a50de6002ce4cb3413ac5b4dbf5c30)
+        ;
+
+        
+    
+    
+            marker_cluster_1788f56984cf311b9cf7a61689c403fa.addTo(map_4a9dd19c0181f8ba31a0c405ea7c8af6);
+        
+    
+            var marker_a5bc4cac47fdf57b2484d3af02a3c49c = L.marker(
+                [35.18, 129.08],
+                {}
+            ).addTo(map_4a9dd19c0181f8ba31a0c405ea7c8af6);
+        
+    
+            var icon_3abf16d8da59046963878921b8fc9edc = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_a5bc4cac47fdf57b2484d3af02a3c49c.setIcon(icon_3abf16d8da59046963878921b8fc9edc);
+        
+    
+        var popup_67a5862dc8f055658ded8a978d492114 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_01b4cfa4866b239975792459880540b8 = $(`<div id="html_01b4cfa4866b239975792459880540b8" style="width: 100.0%; height: 100.0%;">         <h3>지명: 부산광역시</h3>         <p>사망자 수: 2830</p>         <p>누적 확진자 수: 1836449</p>         <p>신규 확진자 수: 437.0</p>         <p>재감염률: 0.02</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_67a5862dc8f055658ded8a978d492114.setContent(html_01b4cfa4866b239975792459880540b8);
+            
+        
+
+        marker_a5bc4cac47fdf57b2484d3af02a3c49c.bindPopup(popup_67a5862dc8f055658ded8a978d492114)
+        ;
+
+        
+    
+    
+            var marker_50eb008e2f214073146c4df061ee2261 = L.marker(
+                [36.63, 127.49],
+                {}
+            ).addTo(map_4a9dd19c0181f8ba31a0c405ea7c8af6);
+        
+    
+            var icon_5bf9d1c39bbedef7c8077a95656a9276 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_50eb008e2f214073146c4df061ee2261.setIcon(icon_5bf9d1c39bbedef7c8077a95656a9276);
+        
+    
+        var popup_af74b1f8f6d955405928e22bfce375d9 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_d16a029d8a69c06ef5fc1c65cf5c91c6 = $(`<div id="html_d16a029d8a69c06ef5fc1c65cf5c91c6" style="width: 100.0%; height: 100.0%;">         <h3>지명: 충청북도</h3>         <p>사망자 수: 1041</p>         <p>누적 확진자 수: 973451</p>         <p>신규 확진자 수: 507.0</p>         <p>재감염률: 0.05</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_af74b1f8f6d955405928e22bfce375d9.setContent(html_d16a029d8a69c06ef5fc1c65cf5c91c6);
+            
+        
+
+        marker_50eb008e2f214073146c4df061ee2261.bindPopup(popup_af74b1f8f6d955405928e22bfce375d9)
+        ;
+
+        
+    
+    
+            var marker_3677b702b9be366f85b23deb423b8639 = L.marker(
+                [36.51, 126.8],
+                {}
+            ).addTo(map_4a9dd19c0181f8ba31a0c405ea7c8af6);
+        
+    
+            var icon_f99ee7bfc05581b772bdeb3bc29386d5 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3677b702b9be366f85b23deb423b8639.setIcon(icon_f99ee7bfc05581b772bdeb3bc29386d5);
+        
+    
+        var popup_5847495d0758f48738ea43bd02863a1f = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_ab48a7377320d68a4bb38865b03cd87b = $(`<div id="html_ab48a7377320d68a4bb38865b03cd87b" style="width: 100.0%; height: 100.0%;">         <h3>지명: 충청남도</h3>         <p>사망자 수: 1576</p>         <p>누적 확진자 수: 1255556</p>         <p>신규 확진자 수: 743.0</p>         <p>재감염률: 0.06</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_5847495d0758f48738ea43bd02863a1f.setContent(html_ab48a7377320d68a4bb38865b03cd87b);
+            
+        
+
+        marker_3677b702b9be366f85b23deb423b8639.bindPopup(popup_5847495d0758f48738ea43bd02863a1f)
+        ;
+
+        
+    
+    
+            var marker_6a30919582cb675992336c601b724a1f = L.marker(
+                [35.87, 128.6],
+                {}
+            ).addTo(map_4a9dd19c0181f8ba31a0c405ea7c8af6);
+        
+    
+            var icon_abe464db7a30c0654c72f7bc6fd54ada = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_6a30919582cb675992336c601b724a1f.setIcon(icon_abe464db7a30c0654c72f7bc6fd54ada);
+        
+    
+        var popup_db9a2517b706cb21e50e7d37e7cfa821 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_f900087c6abc8bef8514e969d6e39e8e = $(`<div id="html_f900087c6abc8bef8514e969d6e39e8e" style="width: 100.0%; height: 100.0%;">         <h3>지명: 대구광역시</h3>         <p>사망자 수: 1997</p>         <p>누적 확진자 수: 1353229</p>         <p>신규 확진자 수: 513.0</p>         <p>재감염률: 0.04</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_db9a2517b706cb21e50e7d37e7cfa821.setContent(html_f900087c6abc8bef8514e969d6e39e8e);
+            
+        
+
+        marker_6a30919582cb675992336c601b724a1f.bindPopup(popup_db9a2517b706cb21e50e7d37e7cfa821)
+        ;
+
+        
+    
+    
+            var marker_3e1a43d8e0c800130f99752bb3ad7be5 = L.marker(
+                [36.35, 127.39],
+                {}
+            ).addTo(map_4a9dd19c0181f8ba31a0c405ea7c8af6);
+        
+    
+            var icon_8547a9120900cec7fd7eb587fc1531e2 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_3e1a43d8e0c800130f99752bb3ad7be5.setIcon(icon_8547a9120900cec7fd7eb587fc1531e2);
+        
+    
+        var popup_6369eb569d85c283108d08d3e9a3bc00 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_d8bfb289b8ac874e642e333c451cf90e = $(`<div id="html_d8bfb289b8ac874e642e333c451cf90e" style="width: 100.0%; height: 100.0%;">         <h3>지명: 대전광역시</h3>         <p>사망자 수: 947</p>         <p>누적 확진자 수: 905430</p>         <p>신규 확진자 수: 489.0</p>         <p>재감염률: 0.05</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_6369eb569d85c283108d08d3e9a3bc00.setContent(html_d8bfb289b8ac874e642e333c451cf90e);
+            
+        
+
+        marker_3e1a43d8e0c800130f99752bb3ad7be5.bindPopup(popup_6369eb569d85c283108d08d3e9a3bc00)
+        ;
+
+        
+    
+    
+            var marker_91650cffde7ce57b7de6ee608923240b = L.marker(
+                [37.88, 127.73],
+                {}
+            ).addTo(map_4a9dd19c0181f8ba31a0c405ea7c8af6);
+        
+    
+            var icon_915732119b5937b04e00ff8add964cb0 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_91650cffde7ce57b7de6ee608923240b.setIcon(icon_915732119b5937b04e00ff8add964cb0);
+        
+    
+        var popup_ea8613008509e600d1b80a18e8da2280 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_1d2a559f125130787940ba61184688c3 = $(`<div id="html_1d2a559f125130787940ba61184688c3" style="width: 100.0%; height: 100.0%;">         <h3>지명: 강원특별자치도</h3>         <p>사망자 수: 1326</p>         <p>누적 확진자 수: 910288</p>         <p>신규 확진자 수: 417.0</p>         <p>재감염률: 0.05</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_ea8613008509e600d1b80a18e8da2280.setContent(html_1d2a559f125130787940ba61184688c3);
+            
+        
+
+        marker_91650cffde7ce57b7de6ee608923240b.bindPopup(popup_ea8613008509e600d1b80a18e8da2280)
+        ;
+
+        
+    
+    
+            var marker_4b57d378abe217232e712dd7214df830 = L.marker(
+                [35.16, 126.85],
+                {}
+            ).addTo(map_4a9dd19c0181f8ba31a0c405ea7c8af6);
+        
+    
+            var icon_b8649011e8ace2c10771c2ce1b910f7a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4b57d378abe217232e712dd7214df830.setIcon(icon_b8649011e8ace2c10771c2ce1b910f7a);
+        
+    
+        var popup_fe7d6314b46f580e13992150d7235c1a = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_5359c4074c5d61ea1331d3d018842b62 = $(`<div id="html_5359c4074c5d61ea1331d3d018842b62" style="width: 100.0%; height: 100.0%;">         <h3>지명: 광주광역시</h3>         <p>사망자 수: 825</p>         <p>누적 확진자 수: 904074</p>         <p>신규 확진자 수: 562.0</p>         <p>재감염률: 0.06</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_fe7d6314b46f580e13992150d7235c1a.setContent(html_5359c4074c5d61ea1331d3d018842b62);
+            
+        
+
+        marker_4b57d378abe217232e712dd7214df830.bindPopup(popup_fe7d6314b46f580e13992150d7235c1a)
+        ;
+
+        
+    
+    
+            var marker_98fba818a4e279f6aa64fd1a61e01740 = L.marker(
+                [37.27, 127.01],
+                {}
+            ).addTo(map_4a9dd19c0181f8ba31a0c405ea7c8af6);
+        
+    
+            var icon_e6876db3d6daffac784e5ef81a4a5b24 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_98fba818a4e279f6aa64fd1a61e01740.setIcon(icon_e6876db3d6daffac784e5ef81a4a5b24);
+        
+    
+        var popup_ea28f5019125f1b52be8b3e73165eb9a = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_81b2c4ca8b2588f5ecd1f1930a709b42 = $(`<div id="html_81b2c4ca8b2588f5ecd1f1930a709b42" style="width: 100.0%; height: 100.0%;">         <h3>지명: 경기도</h3>         <p>사망자 수: 8388</p>         <p>누적 확진자 수: 8393182</p>         <p>신규 확진자 수: 4873.0</p>         <p>재감염률: 0.06</p>         <p>재감염자 수: 3.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_ea28f5019125f1b52be8b3e73165eb9a.setContent(html_81b2c4ca8b2588f5ecd1f1930a709b42);
+            
+        
+
+        marker_98fba818a4e279f6aa64fd1a61e01740.bindPopup(popup_ea28f5019125f1b52be8b3e73165eb9a)
+        ;
+
+        
+    
+    
+            var marker_79e8190da0f70064c3171a0a0c7f8c08 = L.marker(
+                [36.58, 128.51],
+                {}
+            ).addTo(map_4a9dd19c0181f8ba31a0c405ea7c8af6);
+        
+    
+            var icon_f25da426d6bfcba6e834383fce61580d = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_79e8190da0f70064c3171a0a0c7f8c08.setIcon(icon_f25da426d6bfcba6e834383fce61580d);
+        
+    
+        var popup_cce734470541d0889a2ed19e0cc81ba5 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_5e67db4427edccdec53c4b9a937c3003 = $(`<div id="html_5e67db4427edccdec53c4b9a937c3003" style="width: 100.0%; height: 100.0%;">         <h3>지명: 경상북도</h3>         <p>사망자 수: 2097</p>         <p>누적 확진자 수: 1420483</p>         <p>신규 확진자 수: 511.0</p>         <p>재감염률: 0.04</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_cce734470541d0889a2ed19e0cc81ba5.setContent(html_5e67db4427edccdec53c4b9a937c3003);
+            
+        
+
+        marker_79e8190da0f70064c3171a0a0c7f8c08.bindPopup(popup_cce734470541d0889a2ed19e0cc81ba5)
+        ;
+
+        
+    
+    
+            var marker_cce3a03a6bd116779058551e62a7e382 = L.marker(
+                [35.23, 128.69],
+                {}
+            ).addTo(map_4a9dd19c0181f8ba31a0c405ea7c8af6);
+        
+    
+            var icon_67bd6ebf03d946105475c31433be3634 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_cce3a03a6bd116779058551e62a7e382.setIcon(icon_67bd6ebf03d946105475c31433be3634);
+        
+    
+        var popup_1fb9bbb20122f7cbac293ef729b29460 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_ddf375e7fb141fccab17cc26fa8eeced = $(`<div id="html_ddf375e7fb141fccab17cc26fa8eeced" style="width: 100.0%; height: 100.0%;">         <h3>지명: 경상남도</h3>         <p>사망자 수: 1959</p>         <p>누적 확진자 수: 1853508</p>         <p>신규 확진자 수: 564.0</p>         <p>재감염률: 0.03</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_1fb9bbb20122f7cbac293ef729b29460.setContent(html_ddf375e7fb141fccab17cc26fa8eeced);
+            
+        
+
+        marker_cce3a03a6bd116779058551e62a7e382.bindPopup(popup_1fb9bbb20122f7cbac293ef729b29460)
+        ;
+
+        
+    
+    
+            var marker_153750f8585fcf873b5a7b796b923d2e = L.marker(
+                [37.45, 126.71],
+                {}
+            ).addTo(map_4a9dd19c0181f8ba31a0c405ea7c8af6);
+        
+    
+            var icon_9c139ebb410045a3140ef5e97e43a099 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_153750f8585fcf873b5a7b796b923d2e.setIcon(icon_9c139ebb410045a3140ef5e97e43a099);
+        
+    
+        var popup_5e173bf88283523fb1fb24c72c3ddf7a = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_aef4873fb9938589b5c95d6e5fbeb154 = $(`<div id="html_aef4873fb9938589b5c95d6e5fbeb154" style="width: 100.0%; height: 100.0%;">         <h3>지명: 인천광역시</h3>         <p>사망자 수: 1898</p>         <p>누적 확진자 수: 1803100</p>         <p>신규 확진자 수: 1083.0</p>         <p>재감염률: 0.06</p>         <p>재감염자 수: 1.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_5e173bf88283523fb1fb24c72c3ddf7a.setContent(html_aef4873fb9938589b5c95d6e5fbeb154);
+            
+        
+
+        marker_153750f8585fcf873b5a7b796b923d2e.bindPopup(popup_5e173bf88283523fb1fb24c72c3ddf7a)
+        ;
+
+        
+    
+    
+            var marker_73da80e69677179930b95d6b48029164 = L.marker(
+                [33.49, 126.5],
+                {}
+            ).addTo(map_4a9dd19c0181f8ba31a0c405ea7c8af6);
+        
+    
+            var icon_68942633c37447a9a149ad47f00666a1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_73da80e69677179930b95d6b48029164.setIcon(icon_68942633c37447a9a149ad47f00666a1);
+        
+    
+        var popup_f46c95e284d07e117e674f8aab686e38 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_9c7722bc493bec5ee33b914f76d7bd97 = $(`<div id="html_9c7722bc493bec5ee33b914f76d7bd97" style="width: 100.0%; height: 100.0%;">         <h3>지명: 제주특별자치도</h3>         <p>사망자 수: 274</p>         <p>누적 확진자 수: 393818</p>         <p>신규 확진자 수: 203.0</p>         <p>재감염률: 0.05</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_f46c95e284d07e117e674f8aab686e38.setContent(html_9c7722bc493bec5ee33b914f76d7bd97);
+            
+        
+
+        marker_73da80e69677179930b95d6b48029164.bindPopup(popup_f46c95e284d07e117e674f8aab686e38)
+        ;
+
+        
+    
+    
+            var marker_f42ee73b57cf707b14e2e2590b21204e = L.marker(
+                [35.82, 127.11],
+                {}
+            ).addTo(map_4a9dd19c0181f8ba31a0c405ea7c8af6);
+        
+    
+            var icon_feeb130e77f02b289319711008531259 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_f42ee73b57cf707b14e2e2590b21204e.setIcon(icon_feeb130e77f02b289319711008531259);
+        
+    
+        var popup_11c192bef7afaa5e469d063f568db012 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_360057011776f04dde03b5b97ef20648 = $(`<div id="html_360057011776f04dde03b5b97ef20648" style="width: 100.0%; height: 100.0%;">         <h3>지명: 전라북도</h3>         <p>사망자 수: 1226</p>         <p>누적 확진자 수: 1043068</p>         <p>신규 확진자 수: 537.0</p>         <p>재감염률: 0.05</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_11c192bef7afaa5e469d063f568db012.setContent(html_360057011776f04dde03b5b97ef20648);
+            
+        
+
+        marker_f42ee73b57cf707b14e2e2590b21204e.bindPopup(popup_11c192bef7afaa5e469d063f568db012)
+        ;
+
+        
+    
+    
+            var marker_4c8cade912c1e5c2c62af115553ea33c = L.marker(
+                [34.81, 126.46],
+                {}
+            ).addTo(map_4a9dd19c0181f8ba31a0c405ea7c8af6);
+        
+    
+            var icon_f7844cd4271d80b0bfdb90708831769a = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_4c8cade912c1e5c2c62af115553ea33c.setIcon(icon_f7844cd4271d80b0bfdb90708831769a);
+        
+    
+        var popup_19d468129aee709d4a09534883d2b296 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_581c25d0ff099e371a6179bf6bbe5ab7 = $(`<div id="html_581c25d0ff099e371a6179bf6bbe5ab7" style="width: 100.0%; height: 100.0%;">         <h3>지명: 전라남도</h3>         <p>사망자 수: 995</p>         <p>누적 확진자 수: 1014602</p>         <p>신규 확진자 수: 516.0</p>         <p>재감염률: 0.05</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_19d468129aee709d4a09534883d2b296.setContent(html_581c25d0ff099e371a6179bf6bbe5ab7);
+            
+        
+
+        marker_4c8cade912c1e5c2c62af115553ea33c.bindPopup(popup_19d468129aee709d4a09534883d2b296)
+        ;
+
+        
+    
+    
+            var marker_94d30680610c1b235168db4e58d58deb = L.marker(
+                [36.48, 127.29],
+                {}
+            ).addTo(map_4a9dd19c0181f8ba31a0c405ea7c8af6);
+        
+    
+            var icon_553d024d1c3c9a6b23ed125218f87818 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_94d30680610c1b235168db4e58d58deb.setIcon(icon_553d024d1c3c9a6b23ed125218f87818);
+        
+    
+        var popup_6105e9f47988ea117afe0c2acdbe60d0 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_eeedff314e2faa953b33117468b7338f = $(`<div id="html_eeedff314e2faa953b33117468b7338f" style="width: 100.0%; height: 100.0%;">         <h3>지명: 세종특별자치시</h3>         <p>사망자 수: 56</p>         <p>누적 확진자 수: 246960</p>         <p>신규 확진자 수: 148.0</p>         <p>재감염률: 0.06</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_6105e9f47988ea117afe0c2acdbe60d0.setContent(html_eeedff314e2faa953b33117468b7338f);
+            
+        
+
+        marker_94d30680610c1b235168db4e58d58deb.bindPopup(popup_6105e9f47988ea117afe0c2acdbe60d0)
+        ;
+
+        
+    
+    
+            var marker_177f7d7bc849b65a3c67f7cb719ce173 = L.marker(
+                [37.56, 126.98],
+                {}
+            ).addTo(map_4a9dd19c0181f8ba31a0c405ea7c8af6);
+        
+    
+            var icon_d00b8369ab914fb63267148201b4d0c1 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_177f7d7bc849b65a3c67f7cb719ce173.setIcon(icon_d00b8369ab914fb63267148201b4d0c1);
+        
+    
+        var popup_a3c7848264c270eee059434a66eb1f74 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_2da23b6c5a66bc43b077338bede43711 = $(`<div id="html_2da23b6c5a66bc43b077338bede43711" style="width: 100.0%; height: 100.0%;">         <h3>지명: 서울특별시</h3>         <p>사망자 수: 6410</p>         <p>누적 확진자 수: 6040320</p>         <p>신규 확진자 수: 4253.0</p>         <p>재감염률: 0.07</p>         <p>재감염자 수: 3.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_a3c7848264c270eee059434a66eb1f74.setContent(html_2da23b6c5a66bc43b077338bede43711);
+            
+        
+
+        marker_177f7d7bc849b65a3c67f7cb719ce173.bindPopup(popup_a3c7848264c270eee059434a66eb1f74)
+        ;
+
+        
+    
+    
+            var marker_df958dc5a9d52a33cac3174a4087e92d = L.marker(
+                [35.54, 129.31],
+                {}
+            ).addTo(map_4a9dd19c0181f8ba31a0c405ea7c8af6);
+        
+    
+            var icon_a0d42a3996ec6afc0a6c7c6ec04e833c = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "star", "iconColor": "white", "markerColor": "blue", "prefix": "glyphicon"}
+            );
+            marker_df958dc5a9d52a33cac3174a4087e92d.setIcon(icon_a0d42a3996ec6afc0a6c7c6ec04e833c);
+        
+    
+        var popup_14abb6885eb71443c1a628c937ee8b31 = L.popup({"maxWidth": 200});
+
+        
+            
+                var html_6b92bc7faa2685e14c91a25eaefc9494 = $(`<div id="html_6b92bc7faa2685e14c91a25eaefc9494" style="width: 100.0%; height: 100.0%;">         <h3>지명: 울산광역시</h3>         <p>사망자 수: 531</p>         <p>누적 확진자 수: 660367</p>         <p>신규 확진자 수: 138.0</p>         <p>재감염률: 0.02</p>         <p>재감염자 수: 0.0</p>         <p>날짜: 2023-04-19</p>         </div>`)[0];
+                popup_14abb6885eb71443c1a628c937ee8b31.setContent(html_6b92bc7faa2685e14c91a25eaefc9494);
+            
+        
+
+        marker_df958dc5a9d52a33cac3174a4087e92d.bindPopup(popup_14abb6885eb71443c1a628c937ee8b31)
+        ;
+
+        
+    
+</script>
+</html>

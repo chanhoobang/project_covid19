@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 from flask_sqlalchemy.pagination import Pagination
 
-from sqlalchemy import select
+from sqlalchemy import desc, select
 from app.database import SESSION
 
 
@@ -107,8 +107,6 @@ class Common:
     def select_where_date(model, date):
         work = select(model).where(model.data_date.in_([date]))
         return SESSION.scalars(work)
-    
-
 
     @staticmethod
     def data_push_list(data, is_global):
@@ -136,14 +134,28 @@ class Common:
 
             new_list.append(temp_list)
         return new_list
-    
-
 
     @staticmethod
     def get_model_page(model, date, page, per_page):
         offset = (page - 1) * per_page
         users = SESSION.query(model).filter(getattr(model, 'data_date') == date).limit(per_page).offset(offset).all()
         return users
+
+    @staticmethod
+    def get_table_record_count(model, date):
+        return SESSION.query(model).filter(getattr(model, 'data_date') == date).count()
+
+    @staticmethod
+    def paginate(model, date, page, per_page=10):
+        total = SESSION.query(model).filter(getattr(model, 'data_date') == date).count()
+        items = SESSION.query(model).filter(getattr(model, 'data_date') == date).offset((page - 1) * per_page).limit(per_page).all()
+        total_pages = math.ceil(total / per_page)
+
+        return items, total_pages
+
+    @staticmethod
+    def get_columns(model):
+        return [column.name for column in model.__table__.columns]
 
     
     # 딕셔너리를 포함하는 리스트를 입력받아 정수 세자리 마라 콤마를 찍어 str 형태로 변환하는 함수
@@ -158,13 +170,18 @@ class Common:
     
     @staticmethod
     def add_comma(num):
+        num = int(num)
         if num < 1000:
-            comma_num = str(num)[0]+","+str(num)[-3:]
+            comma_num = str(num)[-3:]
         elif (num > 1000) & (num < 1000000):
             comma_num = str(num)[-6:-3]+","+str(num)[-3:]
         elif (num > 1000000) & (num < 1000000000):
             comma_num = str(num)[-9:-6]+","+str(num)[-6:-3]+","+str(num)[-3:]
         return comma_num
+    
+    @staticmethod
+    def find_latest_date(model):
+        return SESSION.query(model).order_by(desc(getattr(model, 'data_date'))).limit(1).all()
 
 
 
