@@ -81,7 +81,7 @@ def visualization_global():
         items=items,
         columns=columns,
         page=page,
-        date=request.args.get("date"),
+        date=date,
         total_pages=total_pages,
         global_data=temp_global_data
     )
